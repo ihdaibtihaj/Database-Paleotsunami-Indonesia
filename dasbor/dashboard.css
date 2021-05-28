@@ -1,0 +1,78 @@
+    body {
+      font-family: 'Patua One', cursive;
+      color:#001d3d;
+    }
+    main {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 60px;
+        background-color: white;
+        position: relative;
+
+    }
+    .logonavbar {
+      height: 40px;
+    }
+
+    #navbar {
+      z-index: 999;
+    }
+
+    #chartvaliditas {
+      width: 400px;
+    }
+
+    section {
+      margin:5px;
+      padding: 0px;
+      background-color: #e9ecef; 
+
+    }
+
+    #tabeldata {
+      display:block;
+     width:500px;
+     height:320px;
+     overflow:auto;
+     
+}
+
+    #valid {
+      border:1px solid white;
+
+    }
+
+    #tabeldata {border:1px solid white;
+      background-color: #f8f9fa;
+      
+
+    }
+
+    #disclaimer {border:1px solid white;
+
+
+
+    }
+
+    #sebab {border:1px solid white;
+
+
+    }
+
+    #totaldata   {border:1px solid white;
+
+    }
+
+    #waktu   {border:1px solid white;
+
+    }
+
+    #bukti  {border:1px solid white;
+    }
+
+    #deposittsunami{
+      border:1px solid white;
+    }
+    footer {font-family: arial; font-weight: bold;}
+    nav {font-family: arial; font-weight: bold;}

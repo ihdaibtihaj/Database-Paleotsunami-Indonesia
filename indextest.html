@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="img/makaraui.png">
+  <meta charset="utf-8" />
+  <title>Percobaan popup custom</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!--Bootstrap style-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <!--script bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  
+  <!-- Load Leaflet from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <!-- Load Esri Leaflet from CDN -->
+  <script src="https://unpkg.com/esri-leaflet@3.0.1/dist/esri-leaflet.js"
+    integrity="sha512-JmpptMCcCg+Rd6x0Dbg6w+mmyzs1M7chHCd9W8HPovnImG2nLAQWn3yltwxXRM7WjKKFFHOAKjjF2SC4CgiFBg=="
+    crossorigin=""></script>
+
+  <!-- Load Esri Leaflet Geocoder from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@3.0.0/dist/esri-leaflet-geocoder.css"
+    integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g=="
+    crossorigin="">
+  <script src="https://unpkg.com/esri-leaflet-geocoder@3.0.0/dist/esri-leaflet-geocoder.js"
+    integrity="sha512-vZbMwAf1/rpBExyV27ey3zAEwxelsO4Nf+mfT7s6VTJPUbYmD2KSuTRXTxOFhIYqhajaBU+X5PuFK1QJ1U9Myg=="
+    crossorigin=""></script>
+
+<!--Plugin menampilkan koordinat-->
+  <script type="text/javascript" src="Js/Leaflet.Coordinates-0.1.5.min.js"></script>
+  <link rel="stylesheet" href="css/Leaflet.Coordinates-0.1.5.css"/>
+  <!--[if lte IE 8]><link rel="stylesheet" href="../dist/Leaflet.Coordinates-0.1.3.ie.css" /><![endif]-->
+
+<!--Zoom Home Plugin-->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="css/leaflet.zoomhome.css"/>
+  <script src="Js/leaflet.zoomhome.js"></script>
+
+<!--geolocation-->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+
+<!--style legenda-->
+<link rel="stylesheet" href="css/legenda.css">
+
+<!--my style-->
+  <style>
+    body { margin:0; padding:0; }
+    #map {position: absolute; top:50px; bottom:0; right:0; left:0; }
+    #navbar {z-index: 999}
+    .logonavbar {
+      height: 40px;
+    }
+
+  .leaflet-popup-content-wrapper {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  background: #000;
+  color: #fff;
+  border: 1px solid white;
+}
+  </style>
+
+</head>
+<body>
+<!--script leaflet ajax-->
+<script src="Js/leaflet.ajax.js"></script>
+
+<!--Navigation Bar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
+  <div class="container-fluid">
+    <img class="logonavbar"src="img/makaraui.png" alt="logo">
+    <a class="navbar-brand" href="indexbasemap.html">Indonesia Paleotsunami Database</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#tentangModal">Tentang</a>
+        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#disclaimerModal">Disclaimer</a>
+        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#legendaModal">Legenda</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Unduh Data
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="https://drive.google.com/file/d/1ba-NB_fU_t65V0d4VSFkGmckrRGdathx/view?usp=sharing" target="_blank">Database</a></li>
+            <li><a class="dropdown-item" href="#"  data-bs-toggle="modal" data-bs-target="#unduhModal">Referensi</a></li>
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#proksiModal">Proksi</a></li>
+          </ul>
+        </li>
+        <a class="nav-link" href="dasbor/dashboard.html">Dashboard</a>
+        <a class="nav-link" href="pelajaritsunami.html">Pelajari Tsunami</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<main class="container">
+<!-- Peta-->
+<div id="map"></div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="tentangModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Indonesia Paleotsunami Database</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p align="justify">
+          Indonesia Paleotsunami Database merupakan sebuah WebGIS yang menyajikan data kejadian tsunami yang pernah melanda Indonesia. WebGIS ini selain sebagai peta berbasis internet yang menampilkan data kejadian tsunami, WebGIS ini juga sebagai pangkalan data (database) yang menyimpan seluruh kejadian tsunami beserta karakteristiknya. Informasi yang ada dalam WebGIS ini adalah data kejadian tsunami dan endapan paleotsunami di Indonesia. Kehadiran media ini sebagai sarana infomrasi untuk keperluan penelitian paleotsunami di masa mendatang dan sebagai sarana edukasi untuk menambah kesadaran masyarakat terkait potensi tsunami di Indonesia.
+          <br>
+        
+          Seluruh data dalam WebGIS ini dapat diakses dan diunduh secara <b>gratis.</b>
+
+        <h5>PENTING!</h5>
+
+        Cantumkan Referensi WebGIS ini ketika anda menggunakannya sebagai rujukan dengan format:
+
+        Ibtihaj, Ihda. 2021. Indonesia Paleotsunami Database, Universitas Indonesia. [tanggal akses]</p>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="disclaimerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Disclaimer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <ol>
+         <li>
+           Indonesia Paleotsunami Database merupakan proyek penelitian paleotsunami yang dikembangkan oleh Geosains FMIPA Universitas Indonesia
+         </li>
+         <li>
+             Data yang disajikan dalam WebGIS ini berasal dari penelitian Tim Riset Paleotsunami Geosains Universitas Indonesia dan berbagai literatur tentang tsunami di Indonesia seperti jurnal, buku, laporan penelitian, tugas akhir dan publikasi lainnya. Data dalam pangkalan data ini akan terus diperbaharui seiring dengan penelitian terbaru untuk peningkatan kualitas data dalam pangkalan data.
+         </li>
+         <li>
+            Pengolahan pangkalan data (<i>database</i>) dan Pengembangan WebGIS &copy;Ihda Ibtihaj 2021
+         </li>
+       </ol>
+        
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="legendaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Legenda</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <table class="table table-condensed">
+        <tbody>
+          <tr>
+            <th style="width: 35px"></th>
+            <th class="text-center" style="width: 50%;"></th>
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/tsunami1.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Seluruh Kejadian Tsunami</td>          
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/iconsumbertsunami.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Lokasi Sumber Tsunami</td>          
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/iconsubduksi.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Zona Subduksi</td>          
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/iconsesar.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Sesar</td>          
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center;"><b>Validitas</b></td>          
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/iconvalidexc.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Excellent</td>          
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/iconvalidmoderate.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Moderate</td>          
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/iconvalidfair.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Fair</td>          
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center;"><b>Klasifikasi Waktu</b></td>          
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/historical.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Historical</td>          
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/prehistorical.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Prehistorical</td>          
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center;"><b>Bukti Alam</b></td>          
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/iconprimer.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Primer</td>          
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/iconsekunder.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Sekunder</td>          
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center;"><b>Status Deposit</b></td>          
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/icondepositditemukan.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Deposit Ditemukan</td>          
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/icondepositunknown.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Deposit Tidak Diketahui</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center;"><b>Sebab Tsunami</b></td>          
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/gempa.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Gempa Bumi</td>          
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/vulkanisme.jpg" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Vulkanisme</td>
+          </tr>   
+          <tr>
+            <td style="text-align: center;"><img src="img/landslide.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Longsor Bawah Laut</td>
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/gempalongsor.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Gempa Bumi, Longsoran</td>
+          </tr>   
+          <tr>
+            <td style="text-align: center;"><img src="img/gempavulkanisme.png" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Gempa Bumi, Vulkanisme</td>
+          </tr>
+          <tr>
+            <td style="text-align: center;"><img src="img/vulkanismelongsor.jpg" alt="Awas" style="width: 30px;height: 30px;"></td>
+            <td>Vulkanisme, Longsoran</td>
+          </tr>       
+        </tbody>
+      </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="unduhModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Referensi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          Referensi
+          <table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">No</th>
+<th title="Field #2">Citation</th>
+<th title="Field #3">References</th>
+</tr></thead>
+<tbody><tr>
+<td align="right">1</td>
+<td>Amijaya &amp; Winardi, 2008</td>
+<td>Amijaya, Hendra D. &amp; Sarju Winardi. (2008). Studi sedimentologi endapan tsunami, Pangandaran, Ciamis, Jawa Barat.pdf. Media Teknik, 2, 109-112.</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>Arwani dan Firmansyah, 2013</td>
+<td>Arwani, M., &amp; Firmansyah, M. A. (2013). Identifikasi Kerangka Pengetahuan Masyarakat Nelayan di Kota Bengkulu Dalam Kesiapsiagaan Bencana Sebagai Basis Dalam Merumuskan Model Pengelolaan Bencana. Jurnal Dialog Penganggulangan Bencana, 4(1), 57-64.</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>Aswan et al., 2017</td>
+<td>Aswan, Zaim, Y., Rizal, Y., Sukanta, I. N., Anugrah, et al. (2017). Age determination of paleotsunami sediments around Lombok Island, Indonesia, and identification of their possible tsunamigenic earthquakes. Earthquake Science, 30(2), 107-113. https://doi.org/10.1007/s11589-017-0179-2</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Azzaman dkk., 2017</td>
+<td>Azzaman, M. A., Bramastya, K. G., Pratama, I. W., Bernhardt, A., Kempf, P., &amp; Marliyani, G. I. (2017). Studi endapan paleotsunami di daerah pesisir Pantai Pariaman , Sumatera Barat. Proceeding Seminar Nasional Kebumian Ke-10, January, 1941-1957.</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>BMKG, 2018</td>
+<td>Badan Meteorologi Klimatologi dan Geofisika. (2018). Katalog Gempa Signifikan dan Merusak 1874-2017. BMKG.</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>Bani et al., 2020</td>
+<td>Bani, P., Le Glas, E., Kristianto, Aiuppa, A., &amp; Syahbana, D. K. (2020). The little known Awu volcano is the highest CO2 degassing source on earth. 1640(57).</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>BNPB, 2012</td>
+<td>BNPB. (2012). Menuju Indonesia Tangguh Menghadapi Tsunami. Jakarta: BNPB.</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>Borero et al., 2011</td>
+<td>Borrero, J. C., McAdoo, B., Jaffe, B., Dengler, L., Gelfenbaum, G., Higman, B., Hidayat, R.,et al. (2011). Field survey of the March 28, 2005 Nias-Simeulue earthquake and Tsunami. Pure and Applied Geophysics, 168(6-7), 1075-1088. https://doi.org/10.1007/s00024-010-0218-6</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td>Borrero et al., 2009</td>
+<td>Borrero, J. C., Weiss, R., Okal, E. A., Hidayat, R., Suranto, Arcas, D., &amp; Titov, V. V. (2009). The tsunami of 2007 September 12, Bengkulu province, Sumatra, Indonesia: post-tsunami field survey and numerical modelling. Geophysical Journal International, 178(1), 180-194. https://doi.org/10.1111/j.1365-246X.2008.04058.x</td>
+</tr>
+<tr>
+<td align="right">10</td>
+<td>Cipta, 2009</td>
+<td>Cipta, Athanius. (2009). Gempabumi dan Tsunami Gorontalo 17 Nopember 2008. Bulletin Vulkanologi Dan Bencana Geologi, IV(1), 1-12.</td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td>Daly et al., 2019</td>
+<td>Daly, P., Sieh, K., Seng, T. Y., McKinnon, E. E., Parnell, A. C., Ardiansyah, Feener, R. M., Ismail, N., Nizamuddin, &amp; Majewski, J. (2019). Archaeological evidence that a late 14th-century tsunami devastated the coast of northern Sumatra and redirected history. Proceedings of the National Academy of Sciences of the United States of America, 116(24), 11679-11686. https://doi.org/10.1073/pnas.1902241116</td>
+</tr>
+<tr>
+<td align="right">12</td>
+<td>Fisher &amp; Harris, 2016</td>
+<td>Fisher, T. M. L., &amp; Harris, R. A. (2016). Reconstruction of 1852 Banda Arc megathrust earthquake and tsunami. Natural Hazards, 83(1), 667-689. https://doi.org/10.1007/s11069-016-2345-6</td>
+</tr>
+<tr>
+<td align="right">13</td>
+<td>Fujii et al., 2011</td>
+<td>Fujii, Y., Satake, K., &amp; Nishimae, Y. (2011). Observation and modeling of the January 2009 west Papua, Indonesia Tsunami. Pure and Applied Geophysics, 168(6-7), 1089-1100. https://doi.org/10.1007/s00024-010-0220-z</td>
+</tr>
+<tr>
+<td align="right">14</td>
+<td>Fujino et al., 2014</td>
+<td>Fujino, S., Sieh, K., Meltzner, A. J., Yulianto, E., &amp; Chiang, H. W. (2014). Ambiguous correlation of precisely dated coral detritus with the tsunamis of 1861 and 1907 at Simeulue Island, Aceh Province, Indonesia. Marine Geology, 357, 384-391. https://doi.org/10.1016/j.margeo.2014.09.047</td>
+</tr>
+<tr>
+<td align="right">15</td>
+<td>Geurhaneu dkk.,2016</td>
+<td>Geurhaneu, N. Y., Prasetio, F. B., &amp; Latuputty, G. (2016). Kebencanaan geologi kelautan di bagian utara pulau obi , maluku marine geological hazard in Northern Part of Obi Island , Molucca. Jurnal Geologi Kelautan, 14(1), 23-36.</td>
+</tr>
+<tr>
+<td align="right">16</td>
+<td>Giachetti et al., 2012</td>
+<td>Giachetti, T., Paris, R., Kelfoun, K., &amp; Ontowirjo, B. (2012). Tsunami hazard related to a flank collapse of Anak Krakatau Volcano, Sunda Strait, Indonesia. Geological Society Special Publication, 361(1), 79-90. https://doi.org/10.1144/SP361.7</td>
+</tr>
+<tr>
+<td align="right">17</td>
+<td>Haribuana &amp; Yuwono, 2018</td>
+<td>Haribuana, I. P. Y., &amp; Yuwono, J. S. E. (2018). Jejak Permukiman Pada Bekas Kawah Doro Bente: Sebuah Perspektif Geoarkeologi Kawasan Tambora. Forum Arkeologi, 31(2), 93. https://doi.org/10.24832/fa.v31i2.542</td>
+</tr>
+<tr>
+<td align="right">18</td>
+<td>Harris &amp; Major, 2016</td>
+<td>Harris, R., &amp; Major, J. (2016). Waves of destruction in the East Indies: The Wichmann catalogue of earthquakes and tsunami in the Indonesian region from 1538 to 1877. Geological Society Special Publication, 441(1), 9-46. https://doi.org/10.1144/SP441.2</td>
+</tr>
+<tr>
+<td align="right">19</td>
+<td>Hermansyah, 2012</td>
+<td>Hermansyah. (2012). Naskah Ta-bir Gempa; Antara Mitigasi Bencana dan Kearifan Lokal di Aceh (Kajian Terhadap Naskah-naskah Kuno). Proceeding ADIC III, 3, 1-16. http://oreilly.com/catalog/errata.csp?isbn=9781449340377</td>
+</tr>
+<tr>
+<td align="right">20</td>
+<td>Hidayat et al., 2020</td>
+<td>Hidayat, A., Marfai, M. A., &amp; Hadmoko, D. S. (2020). Eruption on Indonesia-s volcanic islands: A review of potential hazards, fatalities, and management. IOP Conference Series: Earth and Environmental Science, 485(1). https://doi.org/10.1088/1755-1315/485/1/012061</td>
+</tr>
+<tr>
+<td align="right">21</td>
+<td>Iida et al, 1967</td>
+<td>Iida, K., Cox, D. C., &amp; Pararas-Carayannis, G. (1967). Preliminary catalog of tsunamis occurring in the Pacific Ocean. In Hawaii Institute of Geophysics</td>
+</tr>
+<tr>
+<td align="right">22</td>
+<td>Jaffe et al., 2006</td>
+<td>Jaffe, B. E., Borrero, J. C., Prasetya, G. S., Peters, R., McAdoo, B., Gelfenbaum, G., et al. (2006). Northwest Sumatra and offshore Islands field survey after the December 2004 Indian Ocean tsunami. Earthquake Spectra, 22(SUPPL. 3). https://doi.org/10.1193/1.2207724</td>
+</tr>
+<tr>
+<td align="right">23</td>
+<td>Kato et al., 2007</td>
+<td>Kato, T., Ito, T., Abidin, H. Z., &amp; Agustan. (2007). Preliminary report on crustal deformation surveys and tsunami measurements caused by the July 17, 2006 South off Java Island Earthquake and Tsunami, Indonesia. Earth, Planets and Space, 59(9), 1055-1059. https://doi.org/10.1186/BF03352046</td>
+</tr>
+<tr>
+<td align="right">24</td>
+<td>Kusumastuti, 2020</td>
+<td>Kusumastuti, Y., Marin, J., Putra, P. S., &amp; Nugroho, S. H. (2020). Karakteristik Sedimentologi dan Geokimia Endapan Tsunami di Teluk Busong, Pulau Simeulue. Jurnal Geosains Dan Teknologi, 3(1), 12. https://doi.org/10.14710/jgt.3.1.2020.12-20</td>
+</tr>
+<tr>
+<td align="right">25</td>
+<td>Kusumawardani dkk., 2018</td>
+<td>Kusumawardani, M., &amp; Kasim, S. (2018). Karakteristik Endapan Tsunami Berdasarkan Metode Granulometri dan Metode Suseptibilitas di Sulawesi Tengah Charactristic of Tsunami Deposits Based on Granulometric Method and Susceptibility Method in Central Sulawesi. Natural Science: Journal of Science and Technology, 7(1), 36-43.</td>
+</tr>
+<tr>
+<td align="right">26</td>
+<td>Lassa, 2009</td>
+<td>Lassa, J. (2009). Bencana Yang Terlupakan? Mengingat Kembali Bencana Larantuka dan Lembata 1979-2009 (The Forgotten Disasters? Remembering The Larantuka and Lembata Disaster 1979-2009). Journal of NTT Studies, 1(2), 159-184.</td>
+</tr>
+<tr>
+<td align="right">27</td>
+<td>Latief dkk., 2016</td>
+<td>Latief, H., Ardito M., K., Ismoyo, D. O., Bustamam, Dini, A., Navisa, N., &amp; Harkunti Pertiwi, R. (2016). Air Turun Naik di Tiga Negeri Mengingat Tsunami di Ambon 1950. IOTC</td>
+</tr>
+<tr>
+<td align="right">28</td>
+<td>Latief et al., 2000</td>
+<td>Latief, H., Nanang T., P., &amp; Fumihiko, I. (2000). Tsunami Catalog and Zones in Indonesia. Journal of Natural Disaster Science, 22(1), 25-43. https://doi.org/10.2328/jnds.22.25</td>
+</tr>
+<tr>
+<td align="right">29</td>
+<td>Liu &amp; Harris, 2014</td>
+<td>Liu, Z. Y. C., &amp; Harris, R. A. (2014). Discovery of possible mega-thrust earthquake along the Seram Trough from records of 1629 tsunami in eastern Indonesian region. Natural Hazards, 72(3), 1311-1328. https://doi.org/10.1007/s11069-013-0597-y</td>
+</tr>
+<tr>
+<td align="right">30</td>
+<td>Maemunah et al., 2015</td>
+<td>Maemunah, I., Suparka, E., Puspito, N. T., &amp; Hidayati, S. (2015). Sedimentary deposits study of the 2006 Java tsunami, in Pangandaran, West Java (preliminary result). AIP Conference Proceedings, 1658(April). https://doi.org/10.1063/1.4915044</td>
+</tr>
+<tr>
+<td align="right">31</td>
+<td>Mangiri dkk., 2017</td>
+<td>Mangiri-, N., Tamuntuan, G., &amp; Pasau, G. (2017). Reka Ulang Waktu Tiba Dan Tinggi Gelombang Tsunami?: Studi Kasus Pusat Gempa Di Pantai Utara Bolaang Mongondow. Jurnal MIPA, 6(2), 16. https://doi.org/10.35799/jm.6.2.2017.16941</td>
+</tr>
+<tr>
+<td align="right">32</td>
+<td>Maramai &amp; Tinti, 1997</td>
+<td>Maramai, A., &amp; Tinti, S. (1997). The 3 June 1994 Java Tsunami: A post-event survey of the coastal effects. Natural Hazards, 15(1), 31-49. https://doi.org/10.1023/A:1007957224367 </td>
+</tr>
+<tr>
+<td align="right">33</td>
+<td>Martin et al., 2019</td>
+<td>Martin, S. S., Li, L., Okal, E. A., Morin, J., Tetteroo, A. E. G., Switzer, A. D., &amp; Sieh, K. E. (2019). Reassessment of the 1907 Sumatra -Tsunami Earthquake- Based on Macroseismic, Seismological, and Tsunami Observations, and Modeling. Pure and Applied Geophysics, 176(7), 2831-2868. https://doi.org/10.1007/s00024-019-02134-2</td>
+</tr>
+<tr>
+<td align="right">34</td>
+<td>McCue, 2013</td>
+<td>McCue, K. (2013). Historical earthquakes in the Northern Territory. AEES Conference, 1-45. </td>
+</tr>
+<tr>
+<td align="right">35</td>
+<td>Meltzner et al., 2005</td>
+<td>Meltzner, A. J., Sieh, K., Briggs, R. W., &amp; Chiang, H. (2005). Coseismic , Postseismic , and Interseismic Deformation in the Boundary Zone between the 2004 and 2005 Sunda Megathrust Ruptures?: Insights from Coral Microatolls.</td>
+</tr>
+<tr>
+<td align="right">36</td>
+<td>Meltzner et al., 2010</td>
+<td>Meltzner, A. J., Sieh, K., Chiang, H. W., Shen, C. C., Suwargadi, B. W., Natawidjaja, D. H., Philibosian, B. E., Briggs, R. W., &amp; Galetzka, J. (2010). Coral evidence for earthquake recurrence and an A.D. 1390-1455 cluster at the south end of the 2004 Aceh-Andaman rupture. Journal of Geophysical Research: Solid Earth, 115(10). https://doi.org/10.1029/2010JB007499</td>
+</tr>
+<tr>
+<td align="right">37</td>
+<td>Meyer, 1871</td>
+<td>Meyer, A. B. (1871). Volcano near Celebes. Nature.</td>
+</tr>
+<tr>
+<td align="right">38</td>
+<td>Monecke et al., 2008</td>
+<td>Monecke, K., Finger, W., Klarer, D., Kongko, W., McAdoo, B. G., Moore, A. L., &amp; Sudrajat, S. U. (2008). A 1,000-year sediment record of tsunami recurrence in northern Sumatra. Nature, 455(7217), 1232-1234. https://doi.org/10.1038/nature07374</td>
+</tr>
+<tr>
+<td align="right">39</td>
+<td>Moore et al, 2011</td>
+<td>Moore, A., Goff, J., McAdoo, B. G., Fritz, H. M., Gusman, A., Kalligeris, N., Kalsum, K., Susanto, A., Suteja, D., &amp; Synolakis, C. E. (2011). Sedimentary Deposits from the 17 July 2006 Western Java Tsunami, Indonesia: Use of Grain Size Analyses to Assess Tsunami Flow Depth, Speed, and Traction Carpet Characteristics. Pure and Applied Geophysics, 168(11), 1951-1961. https://doi.org/10.1007/s00024-011-0280-8</td>
+</tr>
+<tr>
+<td align="right">40</td>
+<td>Moore et al., 2006</td>
+<td>Moore, A., Nishimura, Y., Gelfenbaum, G., Kamataki, T., &amp; Triyono, R. (2006). Sedimentary deposits of the 26 December 2004 tsunami on the northwest coast of Aceh, Indonesia. Earth, Planets and Space, 58(2), 253-258. https://doi.org/10.1186/BF03353385</td>
+</tr>
+<tr>
+<td align="right">41</td>
+<td>Mutaqin et al., 2019</td>
+<td>Mutaqin, B. W., Lavigne, F., Hadmoko, D. S., &amp; Ngalawani, M. N. (2019). Volcanic Eruption-Induced Tsunami in Indonesia: A Review. IOP Conference Series: Earth and Environmental Science, 256(1). https://doi.org/10.1088/1755-1315/256/1/012023</td>
+</tr>
+<tr>
+<td align="right">42</td>
+<td>Mutaqin et al., 2021</td>
+<td>Mutaqin, Bachtiar W., Lavigne, F., Wassmer, P., Trautmann, M., Joyontono, P., Gomez, C., Septiangga, B., Komorowski, J. C., Sartohadi, J., &amp; Hadmoko, D. S. (2021). Evidence of unknown Paleo-Tsunami events along the Alas Strait, West Sumbawa, Indonesia. Geosciences (Switzerland), 11(2), 1-20. https://doi.org/10.3390/geosciences11020046</td>
+</tr>
+<tr>
+<td align="right">43</td>
+<td>Mutaqin, 2018</td>
+<td>Mutaqin, Bachtiar Wahyu. (2018). Geomorphic impacts of the 1257 CE eruption of Samalas along the Alas strait , West Nusa Tenggara , Indonesia Bachtiar Wahyu Mutaqin To cite this version?: HAL Id?: tel-02413719. Universit- Panth-on-Sorbonne.</td>
+</tr>
+<tr>
+<td align="right">44</td>
+<td>Natawidjaja, 2015</td>
+<td>Natawidjaja, D. H. (2015). Siklus Mega-Tsunami Di Wilayah Aceh-Andaman Dalam Konteks Sejarah. Jurnal RISET Geologi Dan Pertambangan, 25(1), 49. https://doi.org/10.14203/risetgeotam2015.v25.107</td>
+</tr>
+<tr>
+<td align="right">45</td>
+<td>Natawidjaja et al., 2006</td>
+<td>Natawidjaja, D. H., Sieh, K., Chlieh, M., Galetzka, J., Suwargadi, B. W., Cheng, H., Edwards, R. L., Avouac, J. P., &amp; Ward, S. N. (2006). Source parameters of the great Sumatran megathrust earthquakes of 1797 and 1833 inferred from coral microatolls. Journal of Geophysical Research: Solid Earth, 111(6), 1-37. https://doi.org/10.1029/2005JB004025</td>
+</tr>
+<tr>
+<td align="right">46</td>
+<td>NGDC, 2020</td>
+<td>National Geophysical Data Center / World Data Service: NCEI/WDS Global Historical Tsunami Database. NOAA National Centers for Environmental Information. doi:10.7289/V5PN93H7 [2020]</td>
+</tr>
+<tr>
+<td align="right">47</td>
+<td>Okal, 2012</td>
+<td>Okal, E. A. (2012). The south of Java earthquake of 1921 September 11: A negative search for a large interplate thrust event at the Java Trench. Geophysical Journal International, 190(3), 1657-1672. https://doi.org/10.1111/j.1365-246X.2012.05570.x</td>
+</tr>
+<tr>
+<td align="right">48</td>
+<td>Omira et al. 2019</td>
+<td>Omira, R., Dogan, G. G., Hidayat, R., Husrin, S., Prasetya, G., Annunziato, A., Proietti, C., Probst, P., Paparo, M. A., Wronna, M., Zaytsev, A., Pronin, P., Giniyatullin, A., Putra, P. S., Hartanto, D., Ginanjar, G., Kongko, W., Pelinovsky, E., &amp; Yalciner, A. C. (2019). The September 28th, 2018, Tsunami In Palu-Sulawesi, Indonesia: A Post-Event Field Survey. Pure and Applied Geophysics, 176(4), 1379-1395. https://doi.org/10.1007/s00024-019-02145-z</td>
+</tr>
+<tr>
+<td align="right">49</td>
+<td>Pelinovsky et al., 1997</td>
+<td>Pelinovsky, E., Yuliadi, D., Prasetya, G., &amp; Hidayat, R. (1997). The 1996 Sulawesi Tsunami. Natural Hazards, 16(1), 29-38. https://doi.org/10.1023/A:1007904610680</td>
+</tr>
+<tr>
+<td align="right">50</td>
+<td>Pertiwi, 2018</td>
+<td>Pertiwi, I. I., Fattah, M. H., &amp; Rauf, A. (2018). Estimation of Tsunami Inundation and Disaster Mitigation in Bulukumba, Indonesia. Jurnal Geofisika, 16(1), 1. https://doi.org/10.36435/jgf.v16i1.13</td>
+</tr>
+<tr>
+<td align="right">51</td>
+<td>Pranantyo &amp; Cummins, 2020</td>
+<td>Pranantyo, I. R., &amp; Cummins, P. R. (2020). The 1674 Ambon Tsunami: Extreme Run-Up Caused by an Earthquake-Triggered Landslide. Pure and Applied Geophysics, 177(3), 1639-1657. https://doi.org/10.1007/s00024-019-02390-2</td>
+</tr>
+<tr>
+<td align="right">52</td>
+<td>Prasetya et al., 2001</td>
+<td>Prasetya, G. S., De Lange, W. P., &amp; Healy, T. R. (2001). The Makassar Strait Tsunamigenic region, Indonesia. Natural Hazards, 24(3), 295-307. https://doi.org/10.1023/A:1012297413280</td>
+</tr>
+<tr>
+<td align="right">53</td>
+<td>Purnama dkk., 2019</td>
+<td>Purnama, A. A. D. S., Alit Paramarta, I. B., &amp; Rahman, M. S. S. (2019). Estimation of Run Up and Arrival Time of Tsunami in Bali Region Based on TOAST Simulation. Buletin Fisika, 20(1), 29. https://doi.org/10.24843/bf.2019.v20.i01.p06</td>
+</tr>
+<tr>
+<td align="right">54</td>
+<td>Putra &amp; Yulianto, 2017</td>
+<td>Putra, P. S., &amp; Yulianto, E. (2017). Karakteristik Endapan Tsunami Krakatau 1883 Di Daerah Tarahan, Lampung. RISET Geologi Dan Pertambangan, 27(1), 83. https://doi.org/10.14203/risetgeotam2017.v27.301</td>
+</tr>
+<tr>
+<td align="right">55</td>
+<td>Putra et al., 2019</td>
+<td>Putra, P. S., Aswan, A., Maryunani, K. A., Yulianto, E., &amp; Kongko, W. (2019). Field Survey of the 2018 Sulawesi Tsunami Deposits. Pure and Applied Geophysics, 176(6), 2203-2213. https://doi.org/10.1007/s00024-019-02181-9</td>
+</tr>
+<tr>
+<td align="right">56</td>
+<td>Putra et al., 2020</td>
+<td>Putra, P. S., Aswan, A., Maryunani, K. A., Yulianto, E., Nugroho, S. H., &amp; Setiawan, V. (2020). Post-Event Field Survey of the 22 December 2018 Anak Krakatau Tsunami. Pure and Applied Geophysics, 177(6), 2477-2492. https://doi.org/10.1007/s00024-020-02446-8</td>
+</tr>
+<tr>
+<td align="right">57</td>
+<td>Putra et al., 2012</td>
+<td>Putra, P. S., Nishimura, Y., &amp; Yulianto, E. (2012). Sedimentary Features of Tsunami Deposits in Carbonate-Dominated Beach Environments: A Case Study from the 25 October 2010 Mentawai Tsunami. Pure and Applied Geophysics, 170(9-10), 1583-1600. https://doi.org/10.1007/s00024-012-0539-8</td>
+</tr>
+<tr>
+<td align="right">58</td>
+<td>Putra dkk., 2018</td>
+<td>Putra, P. S., Praptisih, Nugroho, S. H., &amp; Supriatna, N. (2018). Data Ancaman Gempa dan Tsunami Megathrust Selatan Jawa Laporan Penelitian Sub Kegiatan?: Penilaian Risiko Bencana.</td>
+</tr>
+<tr>
+<td align="right">59</td>
+<td>Putra dkk., 2016</td>
+<td>Putra, P. S., Supartoyo, &amp; Praja, N. K. (2016). Karakteristik endapan tsunami purba di aceh selatan. Prosiding GEotek Expo Puslit Geoteknologi LIPI, 978-979.</td>
+</tr>
+<tr>
+<td align="right">60</td>
+<td>Putra dkk., 2015</td>
+<td>Putra, P. S., Yulianto, E., Praptisih, Supriatna, N., Trisuksmono, D., Amar, Nurhidayati, A. U., Ridwan, J., &amp; Griffin, J. (2015). Paleotsunami Study in the South Coast of Jawa. Prosiding Pemaparan Hasil Penelitian, 95-102. content/uploads/2016/04/Prosiding-2015.pdf</td>
+</tr>
+<tr>
+<td align="right">61</td>
+<td>Ririmasse, 2014</td>
+<td>Ririmasse, M. (2014). Bencana Masa Lalu di Kepulauan Maluku: Pengetahuan dan Pengembangan Bagi Studi Arkeologi. AMERTA, Jurnal Penelitian Dan Pengembangan Arkeologi, 32(2), 93-109. https://jurnalarkeologi.kemdikbud.go.id/index.php/amerta/article/view/168</td>
+</tr>
+<tr>
+<td align="right">62</td>
+<td>Rizal et al., 2020</td>
+<td>Rizal, E., Khadijah, U. L. S., Nurislaminingsih, R., &amp; Anwar, R. K. (2020). Community literacy about tsunamis in three villages (hutumuri, hative kecil and galala) - Ambon island. European Journal of Molecular and Clinical Medicine, 7(1), 3684-3700.</td>
+</tr>
+<tr>
+<td align="right">63</td>
+<td>Rizal et al, 2017</td>
+<td>Rizal, Y., Aswan, Zaim, Y., Santoso, W. D., Rochim, N., Daryono, Anugrah, S. D., Wijayanto, Gunawan, I., Yatimantoro, T., Hidayanti, Rahayu, R. H., &amp; Priyobudi. (2017). Tsunami Evidence in South Coast Java, Case Study: Tsunami Deposit along South Coast of Cilacap. IOP Conference Series: Earth and Environmental Science, 71(1). https://doi.org/10.1088/1755-1315/71/1/012001</td>
+</tr>
+<tr>
+<td align="right">64</td>
+<td>Rubin et al., 2017</td>
+<td>Rubin, C. M., Horton, B. P., Sieh, K., Pilarczyk, J. E., Daly, P., Ismail, N., &amp; Parnell, A. C. (2017). Highly variable recurrence of tsunamis in the 7,400 years before the 2004 Indian Ocean tsunami. Nature Communications, 8(May), 1-12. https://doi.org/10.1038/ncomms16019</td>
+</tr>
+<tr>
+<td align="right">65</td>
+<td>Rumphius, 1675</td>
+<td>Rumphius, G. E (1675). True History of the Terrible Earthquake that Took Place Recently, and Some Time Before, but Principally on February 17, 1674 in and around the Island of Amboina.</td>
+</tr>
+<tr>
+<td align="right">66</td>
+<td>Rusli dkk., 2010</td>
+<td>Rusli, Irjan, &amp; Rudyanto, A. (2010). Pemodelan Tsunami Sebagai Bahan Mitigasi. Neutrino, 2(2), 164-182.</td>
+</tr>
+<tr>
+<td align="right">67</td>
+<td>Shi et al., 1994</td>
+<td>Shi, S., Dawson, A. G., &amp; Smith, D. E. (1994). Coastal sedimentation associated with the December 12th, 1992 tsunami in Flores, Indonesia. Pure and Applied Geophysics PAGEOPH, 144(3-4), 525-536. https://doi.org/10.1007/BF00874381</td>
+</tr>
+<tr>
+<td align="right">68</td>
+<td>Sieh et al., 2015</td>
+<td>Sieh, K., Daly, P., Edwards McKinnon, E., Pilarczyk, J. E., Chiang, H. W., Horton, B., Rubin, C. M., Shen, C. C., Ismail, N., Vane, C. H., &amp; Feener, R. M. (2015). Penultimate predecessors of the 2004 Indian Ocean tsunami in Aceh, Sumatra: Stratigraphic, archeological, and historical evidence. Journal of Geophysical Research: Solid Earth, 120(1), 308-325. https://doi.org/10.1002/2014JB011538</td>
+</tr>
+<tr>
+<td align="right">69</td>
+<td>Soloviev &amp; Go, 1974</td>
+<td>Soloviev, S. L., &amp; GO, C. N. (1974). A Catalogue of Tsunamis on the Western Shore of the Pacific Ocean (173-1968). Nauka Publishing House.</td>
+</tr>
+<tr>
+<td align="right">70</td>
+<td>Soloviev et al., 1992</td>
+<td>Soloviev, S. L., GO, C. N., &amp; Kim, K. S. (1992). Catalog of Tsunamis in The Pacific 1969-1982.</td>
+</tr>
+<tr>
+<td align="right">71</td>
+<td>Stuart, 2018</td>
+<td>Stuart, K. L. (2018). Discovery of Possible Paleotsunami Deposits in Pangandaran and Adipala, Java, Indonesia Using Grain Size, XRD, and 14C Analyses. Brigham Young University.</td>
+</tr>
+<tr>
+<td align="right">72</td>
+<td>Supartoyo dkk, 2014</td>
+<td>Supartoyo, Surono, &amp; Putranto, E. T. (2014). Katalog Gempa Bumi Merusak di Indonesia Tahun 1612--2014 (5th ed.). Pusat Vulkanologi dan Mitigasi Bencana Geologi, Badan Geologi.</td>
+</tr>
+<tr>
+<td align="right">73</td>
+<td>Susanto dkk., 2020</td>
+<td>Susanto, E., Arsyad, M., Subaer, S., &amp; Setyahagi, A. R. (2020). Pemodelan Waktu Tiba Gelombang Tsunami di Wilayah Pesisir Provinsi Sulawesi Barat. Prosiding Seminar Nasional Fisika PPs Universitas Negeri Makassar, 2, 80-83.</td>
+</tr>
+<tr>
+<td align="right">74</td>
+<td>Sutawidjaja et al., 2007</td>
+<td>Sutawidjaja, I. S., &amp; Sugalang. (2007). Multi-geohazards of Ende city area. Indonesian Journal on Geoscience, 2(4), 217-233. </td>
+</tr>
+<tr>
+<td align="right">75</td>
+<td>Tantri, 2019</td>
+<td>Tantri, &amp; Erlita. (2019). NARASI DAMPAK ( ALAM DAN SOSIAL ). Patrawidya, 20(2), 131-148.</td>
+</tr>
+<tr>
+<td align="right">76</td>
+<td>Tantri, 2014</td>
+<td>Tantri, E. (2014). Letusan Krakatau 1883: Pengaruhnya terhadap gerakan sosial Banten 1888. Jurnal Masyarakat &amp; Budaya, 16(1), 191-214. http://jmb.lipi.go.id/index.php/jmb/article/view/61</td>
+</tr>
+<tr>
+<td align="right">77</td>
+<td>Triyono dkk., 2019</td>
+<td>Triyono, R., Prasetya, T., Anugrah, S. D., Sudrajat, A., Setiyono, U., Gunawan, I., dkk. (2019). Katalog Tsunami Indonesia Per-Wilayah Tahun 416-2018. In Pusat Gempabumi dan Tsunami Kedeputian Bidang Geofisika (kedua). BMKG.</td>
+</tr>
+<tr>
+<td align="right">78</td>
+<td>Tsimopoulou, 2020</td>
+<td>Tsimopoulou, V., Mikami, T., Hossain, T. T., Takagi, H., Esteban, M., &amp; Utama, N. A. (2020). Uncovering unnoticed small-scale tsunamis: field survey in Lombok, Indonesia, following the 2018 earthquakes. Natural Hazards, 103(2), 2045-2070. https://doi.org/10.1007/s11069-020-04071-z</td>
+</tr>
+<tr>
+<td align="right">79</td>
+<td>Van den Bergh et al., 2003</td>
+<td>Van Den Bergh, G. D., Boer, W., De Haas, H., Van Weering, T. C. E., &amp; Van Wijhe, R. (2003). Shallow marine tsunami deposits in Teluk Banten (NW Java, Indonesia), generated by the 1883 Krakatau eruption. Marine Geology, 197(1-4), 13-34. https://doi.org/10.1016/S0025-3227(03)00088-4</td>
+</tr>
+<tr>
+<td align="right">80</td>
+<td>Wibisono, 2017</td>
+<td>Wibisono, S. C. (2017). Bencana dan Peradaban Tambora 1815. Kemendikbud</td>
+</tr>
+<tr>
+<td align="right">81</td>
+<td>Winarni dkk., 2020</td>
+<td>Winarni, W., Kurniasih, A., Nugroho, S. H., Marin, J., Setyawan, R., Putra, P. S., &amp; Yulianto, E. (2020). Karakteristik Endapan Tsunami Berdasarkan Bukti Palinologi dan Sedimentologi di Bagian Timur Pulau Simeulue, Aceh, Indonesia. Jurnal Kelautan Tropis, 23(1), 73. https://doi.org/10.14710/jkt.v23i1.4954</td>
+</tr>
+<tr>
+<td align="right">82</td>
+<td>Wirakusumah &amp; Rachmat, 2017</td>
+<td>Wirakusumah, A. D., &amp; Rachmat, H. (2017). Impact of the 1815 Tambora Eruption to global climate change. IOP Conference Series: Earth and Environmental Science, 71(1). https://doi.org/10.1088/1755-1315/71/1/012007</td>
+</tr>
+<tr>
+<td align="right">83</td>
+<td>Yeh et al., 1993</td>
+<td>Yeh, H., Imamura, F., Synolakis, C., Tsuji, Y., Liu, P., &amp; Shi, S. (1993). The Flores Island tsunamis. Eos, Transactions American Geophysical Union, 74(33), 369-373. https://doi.org/10.1029/93EO00381</td>
+</tr>
+<tr>
+<td align="right">84</td>
+<td>Yudhicara &amp; Budiono, 2008</td>
+<td>Yudhicara, &amp; Budiono, K. (2008). Tsunamigenik di Selat Sunda: Kajian terhadap katalog Tsunami Soloviev. Indonesian Journal on Geoscience, 3(4), 241-251. https://doi.org/10.17014/ijog.vol3no4.20086</td>
+</tr>
+<tr>
+<td align="right">85</td>
+<td>Yudhicara dkk., 2015</td>
+<td>Yudhicara, Bani, P., &amp; Darmawan, A. (2015). Geothermal system as the cause of the 1979 landslide tsunami in Lembata Island, Indonesia. Indonesian Journal on Geoscience, 2(2), 91-99. https://doi.org/10.17014/ijog.2.2.91-99</td>
+</tr>
+<tr>
+<td align="right">86</td>
+<td>Yudhicara dkk., 2010</td>
+<td>Yudhicara, Kongko, Wi., Asvaliantina, V., Suranto, Nugroho, S., Ibrahim, A., PRanowo, W. S., Kerpen, N. B., Kramer, K. F., &amp; Kunst, O. (2010). Jejak Tsunami 25 Oktober 2010 di Kepulauan Mentawai Berdasarkan Penelitian Kebumian dan Wawancara. Jurnal Lingkungan Dan Bencana Geologi, 1, 165-181.</td>
+</tr>
+<tr>
+<td align="right">87</td>
+<td>Yudhicara et al., 2014</td>
+<td>Yudhicara, Y., Robiana, R., &amp; Priambodo, I. C. (2014). The Influence of Coastal Conditions To Tsunami Inundation of Bima Bay, West Nusa Tenggara. Bulletin of the Marine Geology, 29(1), 29-42. https://doi.org/10.32693/bomg.29.1.2014.63</td>
+</tr>
+<tr>
+<td align="right">88</td>
+<td>Yudhicara et al., 2013</td>
+<td>Yudhicara, Y., Zaim, Y., Rizal, Y., Aswan, A., Triyono, R., Setiyono, U., &amp; Hartanto, D. (2013). Characteristics of Paleotsunami Sediments, A Case Study in Cilacap and Pangandaran Coastal Areas, Jawa, Indonesia. Indonesian Journal on Geoscience, 8(4), 163-175. https://doi.org/10.17014/ijog.v8i4.166</td>
+</tr>
+<tr>
+<td align="right">89</td>
+<td>Yudhicara, 2012</td>
+<td>Yudhicara. (2012). Tsunami Characteristics along The Coast of Biak Island based on the 1996 Biak Tsunami Traces Karakteristik Tsunami sepanjang Pantai Pulau Biak Berdasarkan Jejak Tsunami Biak 1996. Indonesian Journal on Geoscience, 7(1), 55-66</td>
+</tr>
+<tr>
+<td align="right">90</td>
+<td>Yulianto, dkk., 2008</td>
+<td>Yulianto, E., Kusmayanto, F., Supriyatna, N., &amp; Dirhamsyah. (2008). Selamat Dari Bencana Tsunami Pembelajaran dari Tsunami Aceh dan Pangandaran Selamat Dari Bencana Tsunami. Jakarta Tsunami Information Centre, UNESCO.</td>
+</tr>
+<tr>
+<td align="right">91</td>
+<td>Zulkarnain dkk., 2017</td>
+<td>Zulkarnain, D. A., Amijaya, H., &amp; Yulianto, E. (2017). Karakteristik endapan paleotsunami di Pesisir Binuangeun, Daerah Wanasalam, Banten. Proceeding, Seminar Nasional Kebumian Ke-10, September, 1625-1636.</td>
+</tr>
+<tr>
+<td align="right">92</td>
+<td>Ibtihaj, 2021</td>
+<td>Ibtihaj, Ihda. (2021). Studi Identifikasi Keterjadian Tsunami Berbasis WebGIS Dalam Upaya Pengurangan Risiko Bencana di Indonesia, Skripsi. Universitas Indonesia.</td>
+</tr>
+</tbody>
+</table>
+          <br>
+          <a href="https://drive.google.com/file/d/1uJdx7iCf5PejxfVHhU7MLTy_8dFeIhzf/view?usp=sharing" class="btn btn-success" role="button" target="_blank">Unduh</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="proksiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Proksi Paleotsunami</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class=" table table-bordered table-hover table-condensed">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Proksi</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>1.</td>
+            <td>Ukuran butir yang berkisar bongkah (sekitar 750 m<sup>3</sup> atau lebih besar) sampai lumpur halus. Tsunami biasanya akan membawa material beragam ukuran yang bergantung pada sumber sedimen yang tersedia</td>
+          </tr>
+          <tr>
+            <td>2.</td>
+            <td>Sedimen dengan karakteristik umumnya halus ke dalam dan ke atas di dalam endapan. Endapan umumnya naik di ketinggian daratan dan dapat meluas hingga beberapa kilometer ke pedalaman dan puluhan atau ratusan kilometer di sepanjang pantai</td>
+          </tr>
+          <tr>
+            <td>3.</td>
+            <td>Unit sedimen yang berbeda/kontras dengan lapisan lainnya akibat ada  gelombang yang berbeda dan/atau mungkin ada sub-unit berlaminasi</td>
+          </tr>
+          <tr>
+            <td>4.</td>
+            <td>Sub-unit bawah dan atas yang berbeda yang mencirikan runup dan backwash akibat tsunami.</td>
+          </tr>
+            <tr>
+            <td>5.</td>
+            <td>Kontak dengan lapisan dibawahnya biasanya tidak selaras atau erosional</td>
+          </tr>
+            <tr>
+            <td>6.</td>
+            <td>Dapat berisi intraklas (rip-up clast) dari material yang mengalami reworked</td>
+          </tr>
+            <tr>
+            <td>7.</td>
+            <td>Kadang-kadang dikaitkan dengan struktur pembebanan di dasar endapan dan dapat dikaitkan dengan fitur likuifaksi di permukaan tanah yang disebabkan oleh gempa bumi yang mengguncang tanah</td>
+          </tr>
+            <tr>
+            <td>8.</td>
+            <td>Fitur skala mikro seperti mikro rip-up clast, lapisan tipis skala milimeter, sisa material organik, lapisan menghalus ke atas dan kontak erosi yang mungkin terlihat di sayatan tipis tetapi tidak di terlihat di skala stratigrafi lapangan.</td>
+          </tr>
+            <tr>
+            <td>9.</td>
+            <td>Pengukuran suseptibilitas magnetik anisotropi (AMS) dikombinasikan dengan analisis ukuran butir memberikan informasi tentang kondisi hidrodinamik 'khas' selama pengendapan tsunami. Penting jika tidak ada struktur sedimen yang terlihat. Sifat magnetik mineral (termasuk kerentanan magnetis) memberikan informasi tentang lingkungan pengendapan.</td>
+          </tr>
+            <tr>
+            <td>10.</td>
+            <td>Laminasi mineral berat dekat dengan bagian bawah unit / sub-unit tetapi tidak sering muncul dan bergantung pada sumber material tsunami. Komposisi dan distribusi vertikal kumpulan mineral berat dapat berubah dari bagian bawah ke atas endapan misalnya, ditemukan lebih banyak mineral mika di bagian atas.</td>
+          </tr>
+            <tr>
+            <td>11.</td>
+            <td>Peningkatan konsentrasi unsur natrium, belerang, klorin (indikator paleosalinitas, termasuk rasio elemen), kalsium, stronsium, magnesium (terkait dengan kandungan cangkang atau terumbu karang), titanium, zirconium (terkait dengan lamina mineral berat jika ada) terjadi pada endapan tsunami relatif terhadap sedimen di bawah dan di atasnya. </td>
+          </tr>
+            <tr>
+            <td>12.</td>
+            <td>Kemungkinan kontaminasi oleh logam berat dan metaloid.</td>
+          </tr>
+            <tr>
+            <td>13.</td>
+            <td>Bukti geokimia (kandungan air asin) dan temuan mikrofosil yang meluas lebih jauh ke daratan daripada batas maksimum seharusnya ditemukan di darat. </td>
+          </tr>
+            <tr>
+            <td>14.</td>
+            <td>Cangkang organisme laut dan lapisan kaya cangkang. Karakteristik cangkang yang beragam usia menunjukkan adanya reworked akibat energi gelombang besar seperti tsunami.</td>
+          </tr>
+            <tr>
+            <td>15.</td>
+            <td>Cangkang, kayu, dan beragam material yang hancur sering ditemukan "tersisip" dekat atau pada lapisan atas dugaan endapan paleotsunami.</td>
+          </tr>
+            <tr>
+            <td>16.</td>
+            <td>Dapat berasosiasi dengan sisa tanaman vaskular yang terkubur dan / atau tanah yang terkubur dan / atau sisa tulang (bukan tulang manusia).</td>
+          </tr>
+            <tr>
+            <td>17.</td>
+            <td>Umumnya berasosiasi dengan adanya peningkatan kemunculan diatom yang hidup di lingkungan laut – air payau. </td>
+          </tr>
+            <tr>
+            <td>18.</td>
+            <td>Ditemukan kumpulan cangkang foraminifera (bisa juga fosil makhluk laut lainnya) yang jumlahnya meningkat namun dalam keadaan cangkang yang rusak. </td>
+          </tr>
+            <tr>
+            <td>19.</td>
+            <td>Konsentrasi pollen darat umumnya menurun pada deposit dan/atau terjadi peningkatan konsentrasi pollen pantai. Perbedaan kandungan pollen pada bagian atas dan bawah deposit menandakan perubahan lingkungan, yang diduga disebabkan tsunami</td>
+          </tr>
+            <tr>
+            <td>20.</td>
+            <td>Adanya situs arkeologi yang menindih atau ditindih oleh lapisan sedimen</td>
+          </tr>
+            <tr>
+            <td>21.</td>
+            <td>Terdapat kumpulan benda arkeologi (archeological middens), namun tidak ada perubahan spesies hewan laut/tidak adanya spesies yang menunjukkan perubahan mendadak pada kondisi lingkungan purba darat dan dekat pantai</td>
+          </tr>
+            <tr>
+            <td>22.</td>
+            <td>Situs arkeologi berupa bangunan yang nampak mengalami kerusakan akibat gelombang air.</td>
+          </tr>
+            <tr>
+            <td>23.</td>
+            <td>Situs arkeologi yang terendapkan kembali (terkubur) di lokasi yang tidak seharusnya</td>
+          </tr>
+          <tr>
+            <td>24.</td>
+            <td>Replikasi, lapisan peninggalan arkeologi pesisir dan tumpukan cangkang yang terpisahkan atau mengalami reworked sebagai ciri terjadinya ada bekas inundasi.</td>
+          </tr>
+          <tr>
+            <td>25.</td>
+            <td>Cerita rakyat setempat tentang kejadian tsunami.</td>
+          </tr>
+          <tr>
+            <td>26.</td>
+            <td>Akuisisi Paleogeomorfologi.</td>
+          </tr>
+          <tr>
+            <td>27.</td>
+            <td>Paleogeomorfologi pada saat inundasi menunjukkan kemungkinan kecil terjadinya genangan badai.</td>
+          </tr>
+          <tr>
+            <td>28.</td>
+            <td>Pengetahuan tsunamigenik lokal atau regional yang diketahui dan dapat dibuktikan atau diidentifikasi.</td>
+          </tr>
+          <tr>
+            <td>29.</td>
+            <td>Pengetahuan lokal dan regional tentang lingkungan purba dapat menjadi informasi badai purba. Jika lingkungan purba tidak mendukung untuk terbentuk badai purba maka adanya lapisan sedimen yang unik berpotensi akibat tsunami</td>
+          </tr>
+          <tr>
+            <td>30.</td>
+            <td>Kesamaan endapan pesisir serupa ditemukan secara regional yang mengindikasikan inundasi regional.</td>
+          </tr>
+          </tbody>
+        </table>
+        <br>
+        <a href="https://drive.google.com/file/d/1XGgl5tl35JBq38d89qMT9En3puNTq850/view?usp=sharing" class="btn btn-success" role="button" target="_blank">Unduh</a>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<!--Script control lokasi-->
+<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+<!--My Script-->
+<script src="Js/script2.js"></script>
+
+</body>
+</html>

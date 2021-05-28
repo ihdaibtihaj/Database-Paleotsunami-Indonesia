@@ -1,0 +1,7669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="makaraui.png">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Dasbor Pangkalan Data Paleotsunami Indonesia</title>
+
+  <!--Bootstrap style-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <!--script bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  <!--script chart js plugin-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!--google font-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+
+<!--my style-->
+<link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+  <!--Navigation Bar-->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="navbar">
+  <div class="container-fluid">
+    <img class="logonavbar"src="makaraui.png" alt="logo">
+    <a class="navbar-brand" href="#">Dasbor Pangkalan Data Paleotsunami Indonesia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="../indexbasemap.html">Peta (Pangkalan Data)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!--Bagian atas-->
+<section>
+
+  <div class="row"> 
+    <div class="col-md-4" id="sebab">
+      <h5 align="center">Sebab Tsunami di Indonesia</h5>
+          <canvas id="sebabtsunami"></canvas>
+    </div>
+  
+      <div class="col" id="tabeldata"><h5 align="center">Tabel Kejadian Tsunami</h5>
+            <table class="table table-bordered table-hover table-condensed" style="font-family: arial">
+<thead><tr><th title="Field #1">ID</th>
+<th title="Field #2">Lokasi Provinsi</th>
+<th title="Field #3">Lokasi Kab/Kota</th>
+<th title="Field #4">Latitude</th>
+<th title="Field #5">Longitude</th>
+<th title="Field #6">Status lokasi</th>
+<th title="Field #7">Karakter fisik</th>
+<th title="Field #8">Klasifikasi</th>
+<th title="Field #9">Waktu kejadian</th>
+<th title="Field #10">Validitas</th>
+<th title="Field #11">Bukti Alam</th>
+<th title="Field #12">Deskripsi Bukti Alam</th>
+<th title="Field #13">Teknik dating</th>
+<th title="Field #14">Jenis dating</th>
+<th title="Field #15">Elevasi gelombang tsunami(m)</th>
+<th title="Field #16">Batas zona inundasi(m)</th>
+<th title="Field #17">Ketebalan endapan(cm)</th>
+<th title="Field #18">Sebab tsunami</th>
+<th title="Field #19">Sumber Lat</th>
+<th title="Field #20">Sumber Long</th>
+<th title="Field #21">Proksi</th>
+<th title="Field #22">Referensi</th>
+<th title="Field #23">Catatan</th>
+</tr></thead>
+<tbody><tr>
+<td align="right">1</td>
+<td>Aceh</td>
+<td>Banda Aceh</td>
+<td align="right">5.563633</td>
+<td align="right">95.310789</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan kejadian gempa disertai tsunami</td>
+<td>Historical</td>
+<td>11 September 1837</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>5.5</td>
+<td>96</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>Aceh</td>
+<td>Aceh</td>
+<td align="right">2.491347</td>
+<td align="right">96.173044</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir mengandung rip-up clast</td>
+<td>Historical</td>
+<td>17 Februari 1861</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>U-Th Dating</td>
+<td>1.5-7</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1</td>
+<td>97.5</td>
+<td>1,3,5,6,10,11,13,15,28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Kusumastuti, 2020; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>Aceh</td>
+<td>Aceh Singkil</td>
+<td align="right">2.270747</td>
+<td align="right">97.807014</td>
+<td>Deposit tidak diketahui</td>
+<td>Cerita Galoro yang menenggelamkan Kota Singkil</td>
+<td>Historical</td>
+<td>26 April 1861</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/cerita rakyat</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1</td>
+<td>97.5</td>
+<td>25,28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td>Kisah Galoro (tsunami) yang menenggalamkan Singkil</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Aceh</td>
+<td>Banda Aceh</td>
+<td align="right">5.563633</td>
+<td align="right">95.310789</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan kejadian gempa disertai tsunami</td>
+<td>Historical</td>
+<td>14 Desember 1885</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>5.5</td>
+<td>96</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>Aceh</td>
+<td>Kuta Raja, Aceh</td>
+<td align="right">5.571986</td>
+<td align="right">95.315997</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan kejadian gempa disertai tsunami</td>
+<td>Historical</td>
+<td>31 Januari 1886</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>5.6</td>
+<td>95.3</td>
+<td>28</td>
+<td>Soloviev &amp; Go, 1974</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>Aceh</td>
+<td>Sigli, Aceh</td>
+<td align="right">5.388656</td>
+<td align="right">95.962192</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan kejadian gempa disertai tsunami</td>
+<td>Historical</td>
+<td>19 Mei 1887</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>5.4</td>
+<td>96</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>Aceh</td>
+<td>Breueh</td>
+<td align="right">5.748056</td>
+<td align="right">95.042028</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan kejadian gempa disertai tsunami</td>
+<td>Historical</td>
+<td>21 Maret 1888</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>5.8</td>
+<td>95</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>Aceh</td>
+<td>Simeulue</td>
+<td align="right">2.491347</td>
+<td align="right">96.173044</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir mengandung rip-up clast</td>
+<td>Historical</td>
+<td>4 Januari 1907</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan sejarah</td>
+<td>0.5-15</td>
+<td>600-800</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>2</td>
+<td>4.5</td>
+<td>10,11,13,15,19,22,25,28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Martin et al., 2019; Fujino et al., 2014; Kusumastuti, 2020; Winarni dkk., 2020; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td>Aceh</td>
+<td>Lhoknga, Kab. Aceh Besar</td>
+<td align="right">5.463514</td>
+<td align="right">95.242408</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>8 Juli 1922</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>5.47</td>
+<td>96.23</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">10</td>
+<td>Aceh</td>
+<td>Calang, Kab. Aceh Jaya</td>
+<td align="right">4.631244</td>
+<td align="right">95.580686</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>8 Juli 1922</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>4.63</td>
+<td>95.57</td>
+<td>28</td>
+<td>Triyono dkk., 2019</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td>Aceh</td>
+<td>Lhoknga, Kab. Aceh Besar</td>
+<td align="right">5.476658</td>
+<td align="right">95.235392</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>10-Apr-22</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1</td>
+<td>100.35</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">12</td>
+<td>Aceh</td>
+<td>Sabang</td>
+<td align="right">5.828092</td>
+<td align="right">95.352092</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>2 Juni 1948</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>5</td>
+<td>95</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">13</td>
+<td>Aceh</td>
+<td>Banda Aceh</td>
+<td align="right">5.563633</td>
+<td align="right">95.310789</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>2-Apr-64</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>5.8</td>
+<td>95.8</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">14</td>
+<td>Aceh</td>
+<td>Sigli</td>
+<td align="right">5.388997</td>
+<td align="right">95.9642</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>12-Apr-67</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>5.5</td>
+<td>97.3</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">15</td>
+<td>Aceh</td>
+<td>Sabang</td>
+<td align="right">5.883447</td>
+<td align="right">95.324392</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>9-Nov-29</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>6</td>
+<td>95</td>
+<td>28</td>
+<td>Triyono dkk., 2019</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">16</td>
+<td>Aceh</td>
+<td>Ulee lhuee</td>
+<td align="right">5.559086</td>
+<td align="right">95.283661</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>09 Mei 1949</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>5.9</td>
+<td>95.7</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">17</td>
+<td>Aceh</td>
+<td>Banda Aceh</td>
+<td align="right">5.564319</td>
+<td align="right">95.300442</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dengan kandungan cangkang, sisa tumbuhan</td>
+<td>Historical</td>
+<td>26 Desember 2004</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data Geologi/Sejarah</td>
+<td>Stratigrafi</td>
+<td>50</td>
+<td>400</td>
+<td>1-80cm</td>
+<td>Gempa Bumi</td>
+<td>3.298</td>
+<td>95.779</td>
+<td>1,2,3,4,5,6,18,15,16,22,25,28,29</td>
+<td>Triyono dkk., 2019; NOAA; Jaffe et al., 2006; Moore et al., 2006</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">18</td>
+<td>Aceh</td>
+<td>Simeulue</td>
+<td align="right">2.39177</td>
+<td align="right">96.33286</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir mengandung rip-up clast</td>
+<td>Historical</td>
+<td>28 Maret 2005</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data Geologi/Sejarah</td>
+<td>Stratigrafi</td>
+<td>1-4.2</td>
+<td>300</td>
+<td>20 cm</td>
+<td>Gempa Bumi</td>
+<td>2.09</td>
+<td>97.11</td>
+<td>1, 10,11,13,19,22,25,28,29,30</td>
+<td>Triyono dkk., 2019; Kusumastuti, 2020; Borero et al., 2011; Winarni dkk., 2020; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">19</td>
+<td>Aceh</td>
+<td>Meulaboh</td>
+<td align="right">4.143683</td>
+<td align="right">96.119556</td>
+<td>Deposit tidak diketahui</td>
+<td>observasi adanya perubahan muka air laut diduga gelombang tsunami</td>
+<td>Historical</td>
+<td>11-Apr-12</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Observasi lapangan</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>2.34</td>
+<td>93.03</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">20</td>
+<td>Aceh</td>
+<td>Calang, Kab. Aceh Jaya</td>
+<td align="right">4.631658</td>
+<td align="right">95.583103</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat terjadi gempa disertai tsunami </td>
+<td>Historical</td>
+<td>9-Nov-29</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Longsor?</td>
+<td>4.633</td>
+<td>95.567</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">21</td>
+<td>Aceh</td>
+<td>Sigli </td>
+<td align="right">5.392486</td>
+<td align="right">95.957625</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>19 Mei 1891</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>5.4</td>
+<td>96</td>
+<td>28</td>
+<td>NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">22</td>
+<td>Aceh</td>
+<td>Teluk Sibigo, Pulau Simeulue</td>
+<td align="right">2.853372</td>
+<td align="right">95.869061</td>
+<td>Deposit tidak diketahui</td>
+<td>gempa disertai tsunami, teramati adanya gelombang air di Pesisir Pantai Amabaan</td>
+<td>Historical</td>
+<td>11-Apr-12</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Observasi lapangan</td>
+<td>Data geologi</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>0.802</td>
+<td>92.463</td>
+<td>25,28,29</td>
+<td>BNPB, 2012 NOAA</td>
+<td>berdampak ke meulabohdan sabang, tsunami kecil</td>
+</tr>
+<tr>
+<td align="right">23</td>
+<td>Aceh</td>
+<td>Ladang Tuha, Kab. Aceh Selatan</td>
+<td align="right">3.193372</td>
+<td align="right">97.272269</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir kontras dengan lapisan lain dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>belum diketahui</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Stratigrafi</td>
+<td> </td>
+<td> </td>
+<td>6</td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>1,2,3,4,5</td>
+<td>Putra dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">24</td>
+<td>Aceh</td>
+<td>Sibideuh, Kab. Aceh Selatan</td>
+<td align="right">2.889256</td>
+<td align="right">97.542319</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir kontras dengan lapisan lain dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>belum diketahui</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Stratigrafi</td>
+<td> </td>
+<td> </td>
+<td>10</td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>1,2,3,4,5</td>
+<td>Putra dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">25</td>
+<td>Aceh</td>
+<td>Lhok Ketapang Cut, Kab. Aceh Besar</td>
+<td align="right">5.540597</td>
+<td align="right">95.20835</td>
+<td>Deposit ditemukan</td>
+<td>endapan pasir dengan clast fosil dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>25 Oktober 1903</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,4,5,6,14,18,28,29,30</td>
+<td>Sieh et al., 2015, Meltzner et al., 2010</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">26</td>
+<td>Aceh</td>
+<td>Lhok Ketapang Cut, Kab. Aceh Besar</td>
+<td align="right">5.540597</td>
+<td align="right">95.20835</td>
+<td>Deposit ditemukan</td>
+<td>endapan pasir dengan clast fosil dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>20 Desember 1903</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,4,5,6,14,18,28,29,30</td>
+<td>Sieh et al., 2015, Meltzner et al., 2010</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">27</td>
+<td>Aceh</td>
+<td>Teluk Bulohan, Kab. Aceh Besar</td>
+<td align="right">5.595675</td>
+<td align="right">95.524858</td>
+<td>Deposit ditemukan</td>
+<td>endapan pasir dengan clast fosil dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>25 Oktober 1903</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,4,5,6,14,18,28,29,30</td>
+<td>Sieh et al., 2015, Meltzner et al., 2010</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">28</td>
+<td>Aceh</td>
+<td>Teluk Bulohan, Kab. Aceh Besar</td>
+<td align="right">5.595675</td>
+<td align="right">95.524858</td>
+<td>Deposit ditemukan</td>
+<td>endapan pasir dengan clast fosil dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>20 Desember 1903</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,4,5,6,14,18,28,29,30</td>
+<td>Sieh et al., 2015, Meltzner et al., 2010</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">29</td>
+<td>Aceh</td>
+<td>Meulaboh</td>
+<td align="right">4.243486</td>
+<td align="right">95.990875</td>
+<td>Deposit ditemukan</td>
+<td>endapan pasir dengan diatom dan pollen dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>1290-1400</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>10-25 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,8,15,17,19,30</td>
+<td>Monecke et al., 2008</td>
+<td>ditemukan 2 lapisan dugaan paleotsunami</td>
+</tr>
+<tr>
+<td align="right">30</td>
+<td>Aceh</td>
+<td>Meulaboh</td>
+<td align="right">4.233908</td>
+<td align="right">95.983333</td>
+<td>Deposit ditemukan</td>
+<td>endapan pasir dengan diatom dan pollen dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>780-990</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>10-25 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,8,15,17,19,30</td>
+<td>Monecke et al., 2008</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">31</td>
+<td>Aceh</td>
+<td>Gua pesisir, Lhong, Kab. Aceh Besar</td>
+<td align="right">5.1653</td>
+<td align="right">95.309008</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dalam gua mengandung foram dan organik dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>7324-7529 tyl</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>10 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,6,7,8,15,16,18</td>
+<td>Rubin et al., 2017</td>
+<td>ada 11 lapisan didalam gua yang menjelaskan keterulangan kejadian tsunami, diduga tsunami karena didalam gua karbonat terdapat endapan pasir</td>
+</tr>
+<tr>
+<td align="right">32</td>
+<td>Aceh</td>
+<td>Gua pesisir, Lhong, Kab. Aceh Besar</td>
+<td align="right">5.1653</td>
+<td align="right">95.309008</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dalam gua mengandung foram dan organik dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>6083-6915 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>10 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,8,15,16,18</td>
+<td>Rubin et al., 2017</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">33</td>
+<td>Aceh</td>
+<td>Gua pesisir, Lhong, Kab. Aceh Besar</td>
+<td align="right">5.1653</td>
+<td align="right">95.309008</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dalam gua mengandung foram dan organik dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>5857-6680 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>10 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,6,8,15,18</td>
+<td>Rubin et al., 2017</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">34</td>
+<td>Aceh</td>
+<td>Gua pesisir, Lhong, Kab. Aceh Besar</td>
+<td align="right">5.1653</td>
+<td align="right">95.309008</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dalam gua mengandung foram dan organik dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>5578-5866 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>10 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,8,15,16,18</td>
+<td>Rubin et al., 2017</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">35</td>
+<td>Aceh</td>
+<td>Gua pesisir, Lhong, Kab. Aceh Besar</td>
+<td align="right">5.1653</td>
+<td align="right">95.309008</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dalam gua mengandung foram dan organik dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>5480-5770 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>20 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,8,15,18</td>
+<td>Rubin et al., 2017</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">36</td>
+<td>Aceh</td>
+<td>Gua pesisir, Lhong, Kab. Aceh Besar</td>
+<td align="right">5.1653</td>
+<td align="right">95.309008</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dalam gua mengandung foram dan organik dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>5357-5575 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>23 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,6,8,14,15,18</td>
+<td>Rubin et al., 2017</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">37</td>
+<td>Aceh</td>
+<td>Gua pesisir, Lhong, Kab. Aceh Besar</td>
+<td align="right">5.1653</td>
+<td align="right">95.309008</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dalam gua mengandung foram dan organik dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>3304-3363 tyl</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>2-7 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,2,3,5,8,10,15,16,18</td>
+<td>Rubin et al., 2017</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">38</td>
+<td>Aceh</td>
+<td>Gua pesisir, Lhong, Kab. Aceh Besar</td>
+<td align="right">5.1653</td>
+<td align="right">95.309008</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dalam gua mengandung foram dan organik dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>3287-3353 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>2-7 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,2,3,5,15,18</td>
+<td>Rubin et al., 2017</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">39</td>
+<td>Aceh</td>
+<td>Gua pesisir, Lhong, Kab. Aceh Besar</td>
+<td align="right">5.1653</td>
+<td align="right">95.309008</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dalam gua mengandung foram dan organik dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>3278-3346 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>2-7 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,6,8,15,18</td>
+<td>Rubin et al., 2017</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">40</td>
+<td>Aceh</td>
+<td>Gua pesisir, Lhong, Kab. Aceh Besar</td>
+<td align="right">5.1653</td>
+<td align="right">95.309008</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dalam gua mengandung foram dan organik dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>3270-3341 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>2-7 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,8,15,18</td>
+<td>Rubin et al., 2017</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">41</td>
+<td>Aceh</td>
+<td>Gua pesisir, Lhong, Kab. Aceh Besar</td>
+<td align="right">5.1653</td>
+<td align="right">95.309008</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dalam gua mengandung foram dan organik dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>2815-2916 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>20 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,2,3,5,8,15,18</td>
+<td>Rubin et al., 2017</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">42</td>
+<td>Aceh</td>
+<td>Ujung Salang, Simeulue</td>
+<td align="right">2.701386</td>
+<td align="right">95.755822</td>
+<td>Deposit ditemukan</td>
+<td>pengukuran mikroatol dan korelasi endapan pulau simeulue indikasi paleotsunami</td>
+<td>Prehistorical</td>
+<td>13 Agustus 1902</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>U-Th Dating</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>28,29,30</td>
+<td>Meltzner, et al. 2010; Natawidjaja, 2015</td>
+<td>Meltzner: penelitian paleoseismic, kejadian uplift yang diukur umur menggunakan mikroatol di pulau simeuleu, Natawidjaja: riset keterulangan tsunami</td>
+</tr>
+<tr>
+<td align="right">43</td>
+<td>Aceh</td>
+<td>Pesisir Utara Pantai Kab. Aceh Besar</td>
+<td align="right">5.625853</td>
+<td align="right">95.394103</td>
+<td>Deposit ditemukan</td>
+<td>Artefak pecahan keramik berbagai umur sepajang garis pantai utara Sumatra indikasi paleotsunami</td>
+<td>Prehistorical</td>
+<td>25 Oktober 1903</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Informasi Arkeologi</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>20,23,28</td>
+<td>Daly et al., 2019</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">44</td>
+<td>Aceh</td>
+<td>Simeulue</td>
+<td align="right">2.811836</td>
+<td align="right">95.961244</td>
+<td>Deposit tidak diketahui</td>
+<td>Naskah Ta&#39;bir Gempa menuliskan terjadi gempa bumi dan tsunami</td>
+<td>Historical</td>
+<td>25 November 1833</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1</td>
+<td>100</td>
+<td>25,28,29</td>
+<td>Hermansyah, 2012</td>
+<td>Naskah Ta&#39;bir Gempa, berdampak juga ke Pantai Barat Aceh</td>
+</tr>
+<tr>
+<td align="right">45</td>
+<td>Bali</td>
+<td>Buleleng</td>
+<td align="right">-8.114347</td>
+<td align="right">115.075161</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat adanya tsunami didukung dengan cerita rakyat lokal seperti babad buleleng dan babad ratu panji sakti</td>
+<td>Historical</td>
+<td>22 November 1815</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/cerita rakyat</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8</td>
+<td>115.2</td>
+<td>25,28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; NOAA</td>
+<td>ada kisah babad buleleng dan babad ratu panji sakti</td>
+</tr>
+<tr>
+<td align="right">46</td>
+<td>Bali</td>
+<td>Karangasem</td>
+<td align="right">-8.282428</td>
+<td align="right">115.600975</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat adanya gempa disertai tsunami didukung dengan cerita rakyat seperti gejer bali</td>
+<td>Historical</td>
+<td>8 November 1818</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/cerita rakyat</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>3.5</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-7.8</td>
+<td>115.8</td>
+<td>25,28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Rusli dkk., 2010;NOAA</td>
+<td>Gejer Bali, lokasi terkena berdasarkan pemodelan tsunami</td>
+</tr>
+<tr>
+<td align="right">47</td>
+<td>Bali</td>
+<td>Klungkung</td>
+<td align="right">-8.574303</td>
+<td align="right">115.379614</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat adanya gempa disertai tsunami didukung dengan cerita rakyat seperti gejer bali</td>
+<td>Historical</td>
+<td>21 Januari 1917</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/cerita rakyat</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1-2m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8</td>
+<td>115.9</td>
+<td>25,28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019</td>
+<td>Gejer Bali</td>
+</tr>
+<tr>
+<td align="right">48</td>
+<td>Bali</td>
+<td>Badung</td>
+<td align="right">-8.718122</td>
+<td align="right">115.168725</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan gempa dan observasi adanya gelombang dari laut</td>
+<td>Historical</td>
+<td>13-Apr-85</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Observasi lapangan</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>2</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-9.245</td>
+<td>114.18</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; Purnama dkk., 2019;NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">49</td>
+<td>Bali</td>
+<td>Karangasem</td>
+<td align="right">-8.222661</td>
+<td align="right">115.5403</td>
+<td>Deposit tidak diketahui</td>
+<td>Erupsi Gunung Agung memicu terjadinya tsunami</td>
+<td>Historical</td>
+<td>30 Maret 1963</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Observasi lapangan</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik </td>
+<td>-8.342</td>
+<td>115.508</td>
+<td>28,29</td>
+<td>Mutaqin et al., 2019; NOAA</td>
+<td>Erupsi Gunung Agung</td>
+</tr>
+<tr>
+<td align="right">50</td>
+<td>Banten</td>
+<td>Pantai Binuangen, Kab. Lebak</td>
+<td align="right">-6.843169</td>
+<td align="right">105.901589</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dugaan paleotsunami </td>
+<td>Prehistorical</td>
+<td>Tidak diketahui</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Stratigrafi</td>
+<td> </td>
+<td> </td>
+<td>10 - 25 cm</td>
+<td>Gempa bumi </td>
+<td> </td>
+<td> </td>
+<td>1,3,6,10,12,14,18</td>
+<td>Zulkarnain dkk., 2017</td>
+<td>lokasi endapan dibawah lapisan modern/historical, diduga paleotsunami, Dating belum dilakukan</td>
+</tr>
+<tr>
+<td align="right">51</td>
+<td>Banten</td>
+<td>Pantai Selatan, Lebak</td>
+<td align="right">-6.815489</td>
+<td align="right">105.992686</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dugaan paleotsunami hasil bor tangan</td>
+<td>Prehistorical</td>
+<td>600-300 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>5-10 cm</td>
+<td>Gempa bumi </td>
+<td> </td>
+<td> </td>
+<td>1,2,3,5,6,12,18</td>
+<td>Putra dkk., 2015</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">52</td>
+<td>Banten</td>
+<td>Selat Sunda</td>
+<td align="right">-6.102</td>
+<td align="right">105.423</td>
+<td>Deposit ditemukan</td>
+<td>Kisah dalam Kitab Jawa Pustaka Raja menjelaskan adanya fenomena erupsi dan gelombang tsunami</td>
+<td>Historical</td>
+<td>19 Februari 1901</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/cerita rakyat</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td> </td>
+<td> </td>
+<td>25,28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Mutaqin et al., 2019; NOAA</td>
+<td>Letusan Gunung Krakatau Purba</td>
+</tr>
+<tr>
+<td align="right">53</td>
+<td>Banten</td>
+<td>Caringin, Pandeglang</td>
+<td align="right">-6.357814</td>
+<td align="right">105.822675</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>16 Maret 1863</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-6.1</td>
+<td>106.7</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">54</td>
+<td>Banten</td>
+<td>Tjikawung, Pandeglang</td>
+<td align="right">-6.803594</td>
+<td align="right">105.489047</td>
+<td>Deposit tidak diketahui</td>
+<td>aktivitas gunung krakatau menyebabkan terjadinya kenaikan air laut dan memicu gelombang tsunami</td>
+<td>Historical</td>
+<td>10 Oktober 1883</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td>75m</td>
+<td> </td>
+<td>Vulkanik</td>
+<td>-6.102</td>
+<td>105.423</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">55</td>
+<td>Banten</td>
+<td>Anyer</td>
+<td align="right">-6.087939</td>
+<td align="right">105.883108</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>16 Agustus 1889</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-6.05</td>
+<td>105.92</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">56</td>
+<td>Banten</td>
+<td>Pesisir Barat Pandeglang, Selat Sunda</td>
+<td align="right">-6.386031</td>
+<td align="right">105.825117</td>
+<td>Deposit tidak diketahui</td>
+<td>aktivitas gunung krakatau menyebabkan terjadinya kenaikan air laut dan memicu gelombang tsunami</td>
+<td>Historical</td>
+<td>17 Maret 1930</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>5-10m</td>
+<td>500m</td>
+<td> </td>
+<td>Vulkanik</td>
+<td>-6.102</td>
+<td>105.423</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Mutaqin et al., 2019; Giachetti et al., 2012; NOAA</td>
+<td>Erupsi Krakatau</td>
+</tr>
+<tr>
+<td align="right">57</td>
+<td>Banten</td>
+<td>Labuan</td>
+<td align="right">-6.3747</td>
+<td align="right">105.822711</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>16 Desember 1963</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>0.7</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-6.2</td>
+<td>105.4</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">58</td>
+<td>Banten</td>
+<td>Teluk Banten </td>
+<td align="right">-6.019311</td>
+<td align="right">106.193439</td>
+<td>Deposit tidak diketahui</td>
+<td>Lapisan material vulkanik dengan pecahan cangkang, pasir,bongkah di pantai</td>
+<td>Historical</td>
+<td>26 Agustus 1883</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data Geologi/Sejarah</td>
+<td>Pb 210 Dating</td>
+<td>1.5-41m</td>
+<td> </td>
+<td>7 cm</td>
+<td>Vulkanik</td>
+<td>-6.102</td>
+<td>105.423</td>
+<td>1,2,3,4,5,6,15,18,25,28,29,30</td>
+<td>Iida et al., 1967; Triyono dkk., 2019; Tantri, 2014; Van den Bergh et al., 2003; Yudhicara &amp; Budiono, 2008</td>
+<td>Erupsi Krakatau dampak di Banten dan Lampung</td>
+</tr>
+<tr>
+<td align="right">59</td>
+<td>Banten</td>
+<td>Selat Sunda</td>
+<td align="right">-6.517333333</td>
+<td align="right">105.6326667</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir-bongkah, kandungan rip-up clast</td>
+<td>Historical</td>
+<td>22 Desember 2018</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data Geologi/Sejarah</td>
+<td>Stratigrafi</td>
+<td>8</td>
+<td>260</td>
+<td>10 cm</td>
+<td>Vulkanik, Longsoran</td>
+<td>-6.099278</td>
+<td>105.421453</td>
+<td>1,2,3,5,6,10,15,22,28,29</td>
+<td>Triyono dkk., 2019; Putra et al., 2020; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">60</td>
+<td>Banten</td>
+<td>Pandeglang</td>
+<td align="right">-6.566053</td>
+<td align="right">105.617042</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat adanya gempa yang terasakan di Sumatra dan Jawa. Teramati adanya fluktuasi asi yang berbeda di Selat Sunda (diduga tsunami)</td>
+<td>Historical</td>
+<td>9 Januari 1852</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-6.5</td>
+<td>105.5</td>
+<td>28,29,30</td>
+<td>Yudhicara &amp; Budiono, 2008; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">61</td>
+<td>Banten</td>
+<td>Pantai Bagedur, Lebak</td>
+<td align="right">-6.80383603</td>
+<td align="right">106.0089039</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dengan kandungan cangkang, sisa kayu</td>
+<td>Prehistorical</td>
+<td>belum diketahui</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data Geologi</td>
+<td>belum diketahui</td>
+<td> </td>
+<td> </td>
+<td>8cm</td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,6,14,15,30</td>
+<td>Ibtihaj, 2021</td>
+<td>Lapisan kandidat paleotsunami hasil pengambilan data lapangan</td>
+</tr>
+<tr>
+<td align="right">62</td>
+<td>Bengkulu</td>
+<td>Manna, Bengkulu</td>
+<td align="right">-4.445925</td>
+<td align="right">102.888531</td>
+<td>Deposit tidak diketahui</td>
+<td>gempa di sertai tsunami merusak pemumikan warga</td>
+<td>Historical</td>
+<td>4-Nov-04</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-5</td>
+<td>102</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">63</td>
+<td>Bengkulu</td>
+<td>Bengkulu</td>
+<td align="right">-3.777331</td>
+<td align="right">102.262167</td>
+<td>Deposit tidak diketahui</td>
+<td>Kapal Northumberland dan Sunbury merasakan gelombang besar, di daratan terasa gempa dan gelombang di pesisir</td>
+<td>Historical</td>
+<td>18 Maret 1818</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.767</td>
+<td>102.27</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Harris &amp; Major, 2016; Arwani dan Firmansyah 2013; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">64</td>
+<td>Bengkulu</td>
+<td>Teluk Sagara, Bengkulu</td>
+<td align="right">-3.784942</td>
+<td align="right">102.252319</td>
+<td>Deposit tidak diketahui</td>
+<td>Benteng dams dan rumah di pesisir rusak akibat tsunami</td>
+<td>Historical</td>
+<td>24 November 1833</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Bukti Geologi korelasi dengan antropologi</td>
+<td>Data geologi/Sejarah</td>
+<td>U-Th Dating</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.5</td>
+<td>102.2</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Harris &amp; Major, 2016; Natadiwjaja et al., 2006; NOAA</td>
+<td>kejadian tsunami di perkuat dengan penelitian gempa purba yang diukur dengan mikroatol, berdampak juga di Padang, Pariaman</td>
+</tr>
+<tr>
+<td align="right">65</td>
+<td>Bengkulu</td>
+<td>Bengkulu</td>
+<td align="right">-3.742936</td>
+<td align="right">102.250625</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa besar Sumatra yang memicu tsunami di sepanjang Pantai Barat Sumatra</td>
+<td>Historical</td>
+<td>17 Februari 1861</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1m</td>
+<td>500m</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1</td>
+<td>97.5</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">66</td>
+<td>Bengkulu</td>
+<td>Enggano</td>
+<td align="right">-5.347664</td>
+<td align="right">102.272778</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan sejarah menuliskan teramati tsunami setinggi 1m</td>
+<td>Historical</td>
+<td>25-Sep-31</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>1m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-5</td>
+<td>102.75</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td>Catatan detil terbatas, dipengaruhi kondisi penjajahan, terjadi di pulau sedikit keberadaan penduduk</td>
+</tr>
+<tr>
+<td align="right">67</td>
+<td>Bengkulu</td>
+<td>Pantai Bengkulu</td>
+<td align="right">-3.742278</td>
+<td align="right">102.251858</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>22-Apr-58</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-4.5</td>
+<td>104</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Firmansyah dkk., 2014; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">68</td>
+<td>Bengkulu</td>
+<td>Pesisir Pantai Bengkulu</td>
+<td align="right">-3.424761</td>
+<td align="right">101.889794</td>
+<td>Deposit tidak diketahui</td>
+<td>Pengamatan setempat menyatakan terjadi gelombang tsunami di pesisir pantai</td>
+<td>Historical</td>
+<td>12-Sep-07</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/wawancara</td>
+<td>Data Geologi/Sejarah</td>
+<td>Catatan sejarah</td>
+<td>3.6-5</td>
+<td>20-500</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-4.644</td>
+<td>101.199</td>
+<td>22,25,28,29</td>
+<td>Triyono dkk., 2019; Borrero et al., 2009; NOAA</td>
+<td>Tsunami tidak merusak parah, gelombang teramati sepanjang pesisir pantai Bengkulu</td>
+</tr>
+<tr>
+<td align="right">69</td>
+<td>Bengkulu</td>
+<td>Mukomuko</td>
+<td align="right">-2.579869</td>
+<td align="right">101.108706</td>
+<td>Deposit tidak diketahui</td>
+<td>teramati adanya gelombang air yang naik pasca gempa</td>
+<td>Historical</td>
+<td>25 Februari 2008</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Observasi lapangan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>0.12</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-2.486</td>
+<td>99.972</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">70</td>
+<td>DI Yogyakarta</td>
+<td>Kulon Progo</td>
+<td align="right">-7.929844</td>
+<td align="right">110.106317</td>
+<td>Deposit ditemukan</td>
+<td>Lapisan lanau dengan rip-up clast</td>
+<td>Prehistorical</td>
+<td>2150 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,6,8,11,18</td>
+<td>Putra dkk., 2018</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">71</td>
+<td>DI Yogyakarta</td>
+<td>Kulon Progo</td>
+<td align="right">-7.929844</td>
+<td align="right">110.106317</td>
+<td>Deposit ditemukan</td>
+<td>Lapisan lanau dengan rip-up clast</td>
+<td>Prehistorical</td>
+<td>3050tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,6,8,11,18</td>
+<td>Putra dkk., 2018</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">72</td>
+<td>DI Yogyakarta</td>
+<td>Parangtritis</td>
+<td align="right">-8.024308</td>
+<td align="right">110.328008</td>
+<td>Deposit tidak diketahui</td>
+<td>Terjadi gempa besar di Selatan Jawa, teramati terjadi tsunami kecil dan korelasi kejadian di Pangandaran dan Cilacap pada waktu yang sama</td>
+<td>Historical</td>
+<td>11-Sep-21</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>0.1</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-11</td>
+<td>111</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">73</td>
+<td>DI Yogyakarta</td>
+<td>Pantai Selatan</td>
+<td align="right">-8.016981</td>
+<td align="right">110.303767</td>
+<td>Deposit tidak diketahui</td>
+<td>Terjadi gempa di Yogyakarta, teramati adanya kenaikan air laut di Pesisir selatan</td>
+<td>Historical</td>
+<td>10 Juni 1867</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-7.8</td>
+<td>110.4</td>
+<td>28,29</td>
+<td>Latief et al., 2000; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">74</td>
+<td>DKI Jakarta</td>
+<td>Jakarta Utara</td>
+<td align="right">-6.118519</td>
+<td align="right">106.816036</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>Oktober 1722</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-6.174</td>
+<td>106.829</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">75</td>
+<td>DKI Jakarta</td>
+<td>Ciliwung, Jakarta Utara</td>
+<td align="right">-6.120769</td>
+<td align="right">106.830833</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>24 Agustus 1757</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>0.5</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-6</td>
+<td>107</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">76</td>
+<td>DKI Jakarta</td>
+<td>Tanjungpriok</td>
+<td align="right">-6.116361</td>
+<td align="right">106.853311</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>23 Agustus 1927</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>28</td>
+<td>Soloviev &amp; Go, 1974</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">77</td>
+<td>DKI Jakarta</td>
+<td>Pulau Ayer</td>
+<td align="right">-6.005575</td>
+<td align="right">106.781425</td>
+<td>Deposit tidak diketahui</td>
+<td>teramati adanya kenaikan air laut </td>
+<td>Historical</td>
+<td>20 Mei 1883</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi?</td>
+<td>-6.004</td>
+<td>106.781</td>
+<td>28</td>
+<td>NOAA</td>
+<td>Tsunami lokal, informasi terkait minim karena lokasi kepulauan</td>
+</tr>
+<tr>
+<td align="right">78</td>
+<td>Gorontalo</td>
+<td>Gorontalo</td>
+<td align="right">0.505378</td>
+<td align="right">123.063014</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>25 Agustus 1871</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>0.5</td>
+<td>123</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Supartoyo dkk., 2014; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">79</td>
+<td>Gorontalo</td>
+<td>Kwandang, Kab. Gorontalo Utara</td>
+<td align="right">0.827819</td>
+<td align="right">122.874819</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat terjadi gempa terasa di Manado dan Kwandang, teramati ada gelombang dari laut di Kwandang</td>
+<td>Historical</td>
+<td>29 Januari 1920</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>0.87</td>
+<td>122.92</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">80</td>
+<td>Gorontalo</td>
+<td>Kab. Gorontalo Utara</td>
+<td align="right">0.801897</td>
+<td align="right">122.846328</td>
+<td>Deposit tidak diketahui</td>
+<td>observasi adanya gelombang tsunami</td>
+<td>Historical</td>
+<td>20 Juni 1991</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>observasi lapangan</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>5.81</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1.196</td>
+<td>122.787</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; Mangiri dkk., 2017</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">81</td>
+<td>Gorontalo</td>
+<td>Kab. Gorontalo Utara</td>
+<td align="right">1.002</td>
+<td align="right">122.252</td>
+<td>Deposit tidak diketahui</td>
+<td>observasi adanya gelombang tsunami</td>
+<td>Historical</td>
+<td>17-Nov-08</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>observasi lapangan</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>60,4 cm</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>122.18</td>
+<td>1.41</td>
+<td>28,29</td>
+<td>Cipta, 2009; BMKG</td>
+<td>tsunami sangat kecil, air laut surut lalu pasang, tidak menimbulkan korban dan keruskan, kerusakan akibat gempa</td>
+</tr>
+<tr>
+<td align="right">82</td>
+<td>Jawa Barat</td>
+<td>Pantai Selatan, Pangandaran</td>
+<td align="right">-7.688117</td>
+<td align="right">108.637167</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dugaan paleotsunami hasil bor tangan</td>
+<td>Prehistorical</td>
+<td>600-300 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>5 cm </td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>1,2,3,5,6,12,18</td>
+<td>Putra dkk., 2015</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">83</td>
+<td>Jawa Barat</td>
+<td>Lenor</td>
+<td align="right">-6.697822</td>
+<td align="right">108.564714</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>8 April 1862</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1.8-2.1</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-6.7</td>
+<td>108.57</td>
+<td>28,29</td>
+<td>Iida et al., 1967; NOAA</td>
+<td>sumber gempa tercatat di Cirebon, lokasi terdampak adalah Lenor</td>
+</tr>
+<tr>
+<td align="right">84</td>
+<td>Jawa Barat</td>
+<td>Pangandaran</td>
+<td align="right">-7.687692</td>
+<td align="right">108.637567</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dengan cangkang diantara lapisan tanah</td>
+<td>Historical</td>
+<td>17 Juli 2006</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/sejarah</td>
+<td>Stratigrafi</td>
+<td>3-20.9 </td>
+<td>750  m</td>
+<td>10 cm</td>
+<td>Gempa Bumi</td>
+<td>-9.46</td>
+<td>107.19</td>
+<td>1,2,3,4,5,6,14,18,22,25,28,29,30</td>
+<td>Amijaya &amp; Winardi, 2008; Triyono dkk., 2019; NOAA; Maemunah et al., 2015</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">85</td>
+<td>Jawa Barat</td>
+<td>Indramayu</td>
+<td align="right">-6.433603</td>
+<td align="right">108.451019</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa yang dikuti dengan tsunami lokal</td>
+<td>Historical</td>
+<td>9 September 1823</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>0.3 m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-6.4</td>
+<td>108.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">86</td>
+<td>Jawa Barat</td>
+<td>Tanjung Pakis, Karawang</td>
+<td align="right">-5.971139</td>
+<td align="right">107.127839</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>5 Juni 1861</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-6.3</td>
+<td>107.3</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">87</td>
+<td>Jawa Barat</td>
+<td>Genteng</td>
+<td align="right">-7.360403</td>
+<td align="right">106.421367</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>2 agustus 1915</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>4m</td>
+<td>10m</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>28</td>
+<td>Soloviev &amp; Go, 1974</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">88</td>
+<td>Jawa Barat</td>
+<td>Cisolok</td>
+<td align="right">-6.954861</td>
+<td align="right">106.452953</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>2 agustus 1915</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>8m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>28</td>
+<td>Soloviev &amp; Go, 1974</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">89</td>
+<td>Jawa Barat</td>
+<td>Pameungpeuk, Garut</td>
+<td align="right">-7.667044</td>
+<td align="right">107.707692</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa dan teramati adanya gelombang air setinggi 1m</td>
+<td>Historical</td>
+<td>2-Sep-09</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8.24</td>
+<td>107.32</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td>gelombang air teramati di pameungpeuk dan pelabuhan ratu</td>
+</tr>
+<tr>
+<td align="right">90</td>
+<td>Jawa Barat</td>
+<td>Cikembulan,Pangandaran</td>
+<td align="right">-7.683153</td>
+<td align="right">108.602322</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dengan cangkang dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>Miosen Awal-Miosen Akhir</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Fosil Relative Dating</td>
+<td> </td>
+<td> </td>
+<td>5 cm </td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,6,14,16,18</td>
+<td>Yudhicara et al., 2013</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">91</td>
+<td>Jawa Barat</td>
+<td>Batu Kalde, Pangandaran</td>
+<td align="right">-7.705581</td>
+<td align="right">108.654883</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir kontras dengan lapisan lain dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>1300 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Stratigrafi/Arkeologi</td>
+<td> </td>
+<td> </td>
+<td>15-22 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,3,6,14,18,20,30</td>
+<td>Stuart, 2018</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">92</td>
+<td>Jawa Barat</td>
+<td>Goa Panggung, Pangandaran</td>
+<td align="right">-7.705408</td>
+<td align="right">108.660808</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir kontras dengan lapisan lain dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>5040-4864 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Stratigrafi/Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>28 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,2,3,5,6,30</td>
+<td>Stuart, 2018</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">93</td>
+<td>Jawa Barat</td>
+<td>Pangandaran</td>
+<td align="right">-7.686378</td>
+<td align="right">108.63095</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dugaan paleotsunami</td>
+<td>Historical</td>
+<td>11-Sep-21</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Stratigrafi/Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td>4</td>
+<td>Gempa Bumi</td>
+<td>-11</td>
+<td>111</td>
+<td>1,3,28,29,30</td>
+<td>Yudhicara et al., 2013; Yulianto dkk., 2008; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">94</td>
+<td>Jawa Tengah</td>
+<td>Cilacap</td>
+<td align="right">-7.69715</td>
+<td align="right">109.057664</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>7-Sep-04</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-7.7</td>
+<td>109</td>
+<td>28</td>
+<td>Soloviev &amp; Go, 1974</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">95</td>
+<td>Jawa Tengah</td>
+<td>Cilacap</td>
+<td align="right">-7.734017</td>
+<td align="right">109.021811</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dengan rip-up clast, bangunan hancur</td>
+<td>Historical</td>
+<td>17 Juli 2006</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan sejarah</td>
+<td>10</td>
+<td>450</td>
+<td>20 cm</td>
+<td>Gempa Bumi</td>
+<td>-9.46</td>
+<td>107.19</td>
+<td>1,3,4,5,6,16,22,25,28,29,30</td>
+<td>Moore et al, 2011; Rizal et al, 2017</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">96</td>
+<td>Jawa Tengah</td>
+<td>Adipala, Cilacap</td>
+<td align="right">-7.689264</td>
+<td align="right">109.146872</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dengan mineral berat dugaan paleotsunami</td>
+<td>Prehistorical</td>
+<td>Tidak diketahui</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Sulit untuk di tentukan umur</td>
+<td> </td>
+<td> </td>
+<td>13 cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,2,10,30</td>
+<td>Stuart, 2018</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">97</td>
+<td>Jawa Tengah</td>
+<td>Cilacap</td>
+<td align="right">-7.689122</td>
+<td align="right">109.146469</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dugaan paleotsunami</td>
+<td>Historical</td>
+<td>11-Sep-21</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radioaktif Dating (Pb 210)</td>
+<td> </td>
+<td> </td>
+<td>5</td>
+<td>Gempa Bumi</td>
+<td>-11</td>
+<td>111</td>
+<td>1,3,5,29,28,29,30</td>
+<td>Okal, 2012,Yudhicara et al., 2013; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">98</td>
+<td>Jawa Timur</td>
+<td>Pacitan</td>
+<td align="right">-8.220303</td>
+<td align="right">111.087278</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>4 Januari 1840</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8.125</td>
+<td>110.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">99</td>
+<td>Jawa Timur</td>
+<td>Gili Genting, Kab. Sumenep</td>
+<td align="right">-7.191361</td>
+<td align="right">113.932961</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>7 Februari 1843</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>0.3</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-7.2</td>
+<td>114</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">100</td>
+<td>Jawa Timur</td>
+<td>Pasuruan</td>
+<td align="right">-7.650661</td>
+<td align="right">113.033678</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa di Surabaya, Pasuruan. Tercatat adanya pergerakan air dari Utara (laut) mencapai Danau Grati</td>
+<td>Historical</td>
+<td>26 November 1852</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>28</td>
+<td>Soloviev &amp; Go, 1974</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">101</td>
+<td>Jawa Timur</td>
+<td>Pacitan</td>
+<td align="right">-8.220806</td>
+<td align="right">111.090694</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>20 Oktober 1859</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-9</td>
+<td>111</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">102</td>
+<td>Jawa Timur</td>
+<td>Gersik Putih, Kab. Sumenep</td>
+<td align="right">-7.033214</td>
+<td align="right">113.96835</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>23 November 1889</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-7.136</td>
+<td>113.97</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">103</td>
+<td>Jawa Timur</td>
+<td>Besuki</td>
+<td align="right">-7.728003</td>
+<td align="right">113.6839</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>19 Juli 1930</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>0.1</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-9.3</td>
+<td>114.3</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">104</td>
+<td>Jawa Timur</td>
+<td>Banyuwangi</td>
+<td align="right">-8.558486</td>
+<td align="right">113.938025</td>
+<td>Deposit tidak diketahui</td>
+<td>Gelombang tsunami terjadi dini hari menerjang pesisir pantai dan merusak bangunan</td>
+<td>Historical</td>
+<td>3 Juni 1994</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>13.9</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-10.477</td>
+<td>112.83</td>
+<td>1,5,22,25,26,28,29,30</td>
+<td>Triyono dkk., 2019; Maramai et al., 1997; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">105</td>
+<td>Jawa Timur</td>
+<td>Banyuwangi</td>
+<td align="right">-8.591658</td>
+<td align="right">114.01975</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan sejarah gempa disertai gelombang tsunami</td>
+<td>Historical</td>
+<td>8 Januari 1925</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>0.7-1</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8</td>
+<td>115</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Supartoyo dkk., 2014; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">106</td>
+<td>Jawa Timur</td>
+<td>Jember</td>
+<td align="right">-8.425297</td>
+<td align="right">113.561897</td>
+<td>Deposit ditemukan</td>
+<td>Bangunan hancur, bongkah di pantai</td>
+<td>Historical</td>
+<td>3 Juni 1994</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan sejarah</td>
+<td>3.2-8.9</td>
+<td>350</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-10.362</td>
+<td>112.892</td>
+<td>1,5,22,25,26,28,29,30</td>
+<td>NOAA; Maramai et al. 1997</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">107</td>
+<td>Jawa Timur</td>
+<td>Pantai Paseban, Lumajang</td>
+<td align="right">-8.322597</td>
+<td align="right">113.329083</td>
+<td>Deposit ditemukan</td>
+<td>Lapisan pasir dengan rip-up clast</td>
+<td>Historical</td>
+<td>120 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,6,8,11,18,19</td>
+<td>Putra dkk., 2018</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">108</td>
+<td>Jawa Timur</td>
+<td>Pantai Paseban, Lumajang</td>
+<td align="right">-8.322597</td>
+<td align="right">113.329083</td>
+<td>Deposit ditemukan</td>
+<td>Lapisan pasir dengan rip-up clast</td>
+<td>Prehistorical</td>
+<td>670 tyl</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,6,8,11,18,19</td>
+<td>Putra dkk., 2018</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">109</td>
+<td>Kalimantan Selatan</td>
+<td>Pulau Sambergelap</td>
+<td align="right">-3.7</td>
+<td align="right">116.6</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>16 Maret 1917</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1.5</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi?</td>
+<td>-3.7</td>
+<td>116.6</td>
+<td>28</td>
+<td>NOAA</td>
+<td>sangat sedikiti catatan yang menginformasikan kejadian tsunami, terjadi di pulau sulit informasi</td>
+</tr>
+<tr>
+<td align="right">110</td>
+<td>Kalimantan Timur</td>
+<td>Sangkulirang</td>
+<td align="right">0.891108</td>
+<td align="right">118.105353</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>14 Mei 1921</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>0.7</td>
+<td>117.9</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">111</td>
+<td>Kalimantan Timur</td>
+<td>Balikpapan</td>
+<td align="right">-1.246731</td>
+<td align="right">116.942547</td>
+<td>Deposit tidak diketahui</td>
+<td>tsunami lokal teramati terjadi di Balikpapan</td>
+<td>Historical</td>
+<td>26 Oktober 1957</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>0.7</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-2</td>
+<td>118</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; Supartoyo dkk., 2014; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">112</td>
+<td>Lampung</td>
+<td>Lampung selatan</td>
+<td align="right">-5.71415</td>
+<td align="right">105.572336</td>
+<td>Deposit tidak diketahui</td>
+<td>aktivitas gunung krakatau menyebabkan terjadinya kenaikan air laut dan memicu gelombang tsunami</td>
+<td>Historical</td>
+<td>26 Maret 1928</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>-6.102</td>
+<td>105.423</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Mutaqin et al., 2019; NOAA</td>
+<td>Erupsi Krakatau</td>
+</tr>
+<tr>
+<td align="right">113</td>
+<td>Lampung</td>
+<td>Pantai Gubug Garam, Kota Tarahan</td>
+<td align="right">-5.608333</td>
+<td align="right">105.4</td>
+<td>Deposit ditemukan</td>
+<td>endapan pasir mengandung cangkang, abu vulkanik dan batuapung</td>
+<td>Historical</td>
+<td>26 Agustus 1883</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Stratigrafi</td>
+<td>4-41 m</td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>-6.102</td>
+<td>105.423</td>
+<td>1,2, 3,6, 12, 10, 14, 15, 18,25,28,29,30</td>
+<td>Putra &amp; Yulianto, 2017; Soloviev &amp; G0, 1974; Iida et al., 1967; NOAA</td>
+<td>Tsunami Krakatau, kisahnya tertuang dalam Syair Lampung Karam</td>
+</tr>
+<tr>
+<td align="right">114</td>
+<td>Lampung</td>
+<td>Pantai Barat Teluk Semangko</td>
+<td align="right">-5.85499</td>
+<td align="right">104.70233</td>
+<td>Deposit ditemukan</td>
+<td>endapan pasir mengandung cangkang, abu vulkanik dan batuapung</td>
+<td>Historical</td>
+<td>26 Agustus 1883</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Stratigrafi</td>
+<td>4-41 m</td>
+<td> </td>
+<td>5 cm </td>
+<td>Vulkanik</td>
+<td>-6.102</td>
+<td>105.423</td>
+<td>1,2, 3,6, 12, 10, 14, 15, 18,25,28,29,30</td>
+<td>Putra &amp; Yulianto, 2016; Soloviev &amp; Go, 1974; Iida et al., 1967; NOAA</td>
+<td>Tsunami Krakatau, kisahnya tertuang dalam Syair Lampung Karam</td>
+</tr>
+<tr>
+<td align="right">115</td>
+<td>Lampung</td>
+<td>Teluk Betung</td>
+<td align="right">-5.454714</td>
+<td align="right">105.265517</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>4 Mei 1851</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1.5 m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-5.716</td>
+<td>105.325</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">116</td>
+<td>Lampung</td>
+<td>Teluk Betung</td>
+<td align="right">-5.456025</td>
+<td align="right">105.264236</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>19 Juni 1930</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1.5</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-5.6</td>
+<td>105.3</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">117</td>
+<td>Lampung</td>
+<td>Lampung selatan</td>
+<td align="right">-5.838739</td>
+<td align="right">105.676786</td>
+<td>Deposit tidak diketahui</td>
+<td> longsoran dari vulkanisme Krakatau menicu terjadinya tsunami</td>
+<td>Historical</td>
+<td>20 Oktober 1981</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Observasi lapangan</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik, Longsoran</td>
+<td>-6.102</td>
+<td>105.423</td>
+<td>28,29</td>
+<td>Mutaqin et al., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">118</td>
+<td>Lampung</td>
+<td>Lampung selatan</td>
+<td align="right">-5.721439</td>
+<td align="right">105.579364</td>
+<td>Deposit tidak diketahui</td>
+<td>Erupsi/aktivitas Vulkanisme Krakatau menyebabkan tsunami</td>
+<td>Historical</td>
+<td>Februari 1884</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>-6.102</td>
+<td>105.423</td>
+<td>28,29</td>
+<td>Mutaqin et al., 2019; NOAA</td>
+<td>Erupsi Krakatau</td>
+</tr>
+<tr>
+<td align="right">119</td>
+<td>Maluku</td>
+<td>Banda Neira, Kab. Maluku Tengah</td>
+<td align="right">-4.552681</td>
+<td align="right">129.881606</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan sejarah, gempa disertai tsunami yang merusak pemukiman warga</td>
+<td>Historical</td>
+<td>1 Agustus 1629</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>4  - 16m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-4.6</td>
+<td>129.9</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Liu &amp; Harris, 2014; Harris &amp; Major, 2016; Latief dkk., 2016;NOAA</td>
+<td>Berdampak satu Kepulauan Banda Neira dan Pulau Seram juga terasa</td>
+</tr>
+<tr>
+<td align="right">120</td>
+<td>Maluku</td>
+<td>Pulau Buru</td>
+<td align="right">-3.381603</td>
+<td align="right">127.110414</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>10 Desember 1657</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3</td>
+<td>128</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">121</td>
+<td>Maluku</td>
+<td>Pulau Teun</td>
+<td align="right">-6.956242</td>
+<td align="right">129.141206</td>
+<td>Deposit tidak diketahui</td>
+<td>Erupsi Gunung Teon menyebabkan tsunami </td>
+<td>Historical</td>
+<td>11 November 1659</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1 -1.5m</td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>-6.92</td>
+<td>129.125</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Mutaqin et al., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">122</td>
+<td>Maluku</td>
+<td>Ambon</td>
+<td align="right">-3.645778</td>
+<td align="right">128.193775</td>
+<td>Deposit tidak diketahui</td>
+<td>gempa menyebabkan tsunami, kapal di laut mengalami kerusakan</td>
+<td>Historical</td>
+<td>30 Juli 1904</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3</td>
+<td>128</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">123</td>
+<td>Maluku</td>
+<td>Ambon</td>
+<td align="right">-3.656639</td>
+<td align="right">128.212594</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi tsunami yang terpantau di teluk ambon</td>
+<td>Historical</td>
+<td>28 November 1708</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3</td>
+<td>128</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">124</td>
+<td>Maluku</td>
+<td>Banda Neira, Kab. Maluku Tengah</td>
+<td align="right">-4.525836</td>
+<td align="right">129.896317</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>10 April 1710</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-4.3</td>
+<td>129.6</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Latief dkk., 2016;NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">125</td>
+<td>Maluku</td>
+<td>Ambon Bay, bagian timur dari pulau ambon</td>
+<td align="right">-3.654017</td>
+<td align="right">128.199092</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa yang disertai tsunami</td>
+<td>Historical</td>
+<td>5 September 1711</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1.2 m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3</td>
+<td>128</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">126</td>
+<td>Maluku</td>
+<td>Hitu Lama, Kab. Maluku Tengah</td>
+<td align="right">-3.585322</td>
+<td align="right">128.173044</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan sejarah mencatat terjadi gempa disertai tsunami yang merusak bangunan dan pemukiman warga</td>
+<td>Historical</td>
+<td>18 Agustus 1754</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.5</td>
+<td>128.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td>berdampak juga ke utara Haruku, Saparua dan Nusa Laut</td>
+</tr>
+<tr>
+<td align="right">127</td>
+<td>Maluku</td>
+<td>Pulau Haruku</td>
+<td align="right">-3.518458</td>
+<td align="right">128.478733</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>7 September 1754</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.567</td>
+<td>128.548</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">128</td>
+<td>Maluku</td>
+<td>Pulau Banda</td>
+<td align="right">-4.52905</td>
+<td align="right">129.937478</td>
+<td>Deposit tidak diketahui</td>
+<td>gempa kuat terasa di Pulau Banda, air surut dan cepat kembali naik</td>
+<td>Historical</td>
+<td>12 September 1763</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>9m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-4.5</td>
+<td>130</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">129</td>
+<td>Maluku</td>
+<td>Ambon</td>
+<td align="right">-3.656639</td>
+<td align="right">128.212594</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa disertai tsunami yang merusak di pesisir pantai, kapal mengalami kerusakan</td>
+<td>Historical</td>
+<td>19 April 1775</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.7</td>
+<td>128.2</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">130</td>
+<td>Maluku</td>
+<td>Ambon</td>
+<td align="right">-3.666081</td>
+<td align="right">128.159742</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>3 Agustus 1802</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.7</td>
+<td>128.2</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">131</td>
+<td>Maluku</td>
+<td>Pulau Haruku, Ambon</td>
+<td align="right">-3.518458</td>
+<td align="right">128.478733</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>11 April 1815</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.7</td>
+<td>128.2</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">132</td>
+<td>Maluku</td>
+<td>Selatan Pulau Banda Neira</td>
+<td align="right">-4.529039</td>
+<td align="right">129.896881</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi getaran yang terasa di pulau, disusul dengan gelombang tsunami air naik sampai gerbang pelabuhan Nassau</td>
+<td>Historical</td>
+<td>26 November 1841</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>2.5-3m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-5</td>
+<td>130</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">133</td>
+<td>Maluku</td>
+<td>Pulau Buru</td>
+<td align="right">-3.381603</td>
+<td align="right">127.110414</td>
+<td>Deposit tidak diketahui</td>
+<td>Gempa disertai gelombang besar yang menyapu pesisir </td>
+<td>Historical</td>
+<td>16 Desember 1841</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1.2-1.5m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-4</td>
+<td>127.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td>berdampak juga ke Ambelau</td>
+</tr>
+<tr>
+<td align="right">134</td>
+<td>Maluku</td>
+<td>Ternate</td>
+<td align="right">0.796206</td>
+<td align="right">127.389183</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>25 Januari 1846</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1.2 m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>2</td>
+<td>126.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">135</td>
+<td>Maluku</td>
+<td>Banda Neira</td>
+<td align="right">-4.530183</td>
+<td align="right">129.905736</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan sejarah: pemukiman setempat menjadi puing akibat gempa dan tsunami</td>
+<td>Historical</td>
+<td>26 November 1852</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>14.5m</td>
+<td>127</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-4.6</td>
+<td>129.9</td>
+<td>22,28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Fisher &amp; Harris, 2016; Harris &amp; Major, 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">136</td>
+<td>Maluku</td>
+<td>Kepulauan Gorong dan Seram</td>
+<td align="right">-4.019247</td>
+<td align="right">131.390986</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa terasa di Bandaneira, teramati gelombang berdampak di Seram merusak kapal di pelabuhan dan menerjang desa terapung di Pulau Gorong</td>
+<td>Historical</td>
+<td>24 Desember 1852</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-5</td>
+<td>130.5</td>
+<td>22,28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">137</td>
+<td>Maluku</td>
+<td>Haruku dan Saparua</td>
+<td align="right">-3.537361</td>
+<td align="right">128.532092</td>
+<td>Deposit tidak diketahui</td>
+<td>Terasa gempa kuat yang disertai gelombang tsunami kecil</td>
+<td>Historical</td>
+<td>4 Januari 1854</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.5</td>
+<td>128.6</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">138</td>
+<td>Maluku</td>
+<td>Pulau Lonthor</td>
+<td align="right">-4.561803</td>
+<td align="right">129.902642</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>20 Juli 1859</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-4.6</td>
+<td>129.9</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">139</td>
+<td>Maluku</td>
+<td>Lonthor</td>
+<td align="right">-4.552361</td>
+<td align="right">129.881842</td>
+<td>Deposit tidak diketahui</td>
+<td>gempa disusul dengan tsunami yang merusak bagian selatan pesisir pantai Pulau Banda </td>
+<td>Historical</td>
+<td>25 September 1859</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-5.5</td>
+<td>130.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Harris &amp; Major, 2016 NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">140</td>
+<td>Maluku</td>
+<td>Ambon</td>
+<td align="right">-3.666836</td>
+<td align="right">128.163903</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>12 Maret 1861</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1.8m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.7</td>
+<td>128.2</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">141</td>
+<td>Maluku</td>
+<td>Teluk Kayeli, Pulau Buru </td>
+<td align="right">-3.3685</td>
+<td align="right">127.080569</td>
+<td>Deposit tidak diketahui</td>
+<td>gempa disertai tsunami yang merusak bangunan di Teluk Kayeli</td>
+<td>Historical</td>
+<td>28 Mei 1876</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>0.3</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3</td>
+<td>127.25</td>
+<td>25, 28</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">142</td>
+<td>Maluku</td>
+<td>Banda Neira</td>
+<td align="right">-4.503158</td>
+<td align="right">129.900525</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>10 Oktober 1882</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-4.5</td>
+<td>129.9</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">143</td>
+<td>Maluku</td>
+<td>Jikomurasa, Pulau Buru</td>
+<td align="right">-3.171953</td>
+<td align="right">127.028372</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa disertai tsunami, rumah dan kapal-kapal rusak</td>
+<td>Historical</td>
+<td>30 April 1885</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1.2m</td>
+<td>800m</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-2.5</td>
+<td>127.5</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">144</td>
+<td>Maluku</td>
+<td>Wahai, Maluku</td>
+<td align="right">-2.786192</td>
+<td align="right">129.463692</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa disertai tsunami, terjadi kerusakan dipesisir</td>
+<td>Historical</td>
+<td>30 April 1885</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>0.3m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-2.5</td>
+<td>127.5</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">145</td>
+<td>Maluku</td>
+<td>Saparua</td>
+<td align="right">-3.575625</td>
+<td align="right">128.651789</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat terjadi gempa dan disusul dengan tsunami di Teluk Saparua</td>
+<td>Historical</td>
+<td>20 Juni 1891</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa bumi </td>
+<td>-4</td>
+<td>129</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">146</td>
+<td>Maluku</td>
+<td>Kayeli</td>
+<td align="right">-3.383483</td>
+<td align="right">127.121033</td>
+<td>Deposit tidak diketahui</td>
+<td>setelah terjadinya gempa teramati adanya gelombang dan kenaikan air laut</td>
+<td>Historical</td>
+<td>18 November 1892</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3</td>
+<td>127.75</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">147</td>
+<td>Maluku</td>
+<td>Hatusua, Pulau Seram</td>
+<td align="right">-3.319947</td>
+<td align="right">128.333639</td>
+<td>Deposit tidak diketahui</td>
+<td>Verbeek mencatat terjadi gempa besar disusul gelombang tsunami yang merusak pemukiman dan korban </td>
+<td>Historical</td>
+<td>30 September 1899</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>9m</td>
+<td>260m</td>
+<td> </td>
+<td>Gempa Bumi, Longsoran</td>
+<td>-3</td>
+<td>127.5</td>
+<td>22,25,28,30</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Ririmasse, 2014</td>
+<td>gempa besar berdampak pada pulau seram disusul tsunami</td>
+</tr>
+<tr>
+<td align="right">148</td>
+<td>Maluku</td>
+<td>Paulohi, Maluku Tengah</td>
+<td align="right">-3.265528</td>
+<td align="right">128.778575</td>
+<td>Deposit tidak diketahui</td>
+<td>Verbeek mencatat terjadi gempa besar disusul gelombang tsunami yang merusak pemukiman dan korban </td>
+<td>Historical</td>
+<td>30 September 1899</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>6.4m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi, Longsoran</td>
+<td>-3</td>
+<td>127.5</td>
+<td>22,25,28,30</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Ririmasse, 2014</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">149</td>
+<td>Maluku</td>
+<td>Tehoru</td>
+<td align="right">-3.326567</td>
+<td align="right">129.496506</td>
+<td>Deposit tidak diketahui</td>
+<td>Verbeek mencatat terjadi gempa besar disusul gelombang tsunami yang merusak pemukiman dan korban </td>
+<td>Historical</td>
+<td>30 September 1899</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>12m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi, Longsoran</td>
+<td>-3</td>
+<td>127.5</td>
+<td>22,25,28,30</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Ririmasse, 2014; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">150</td>
+<td>Maluku</td>
+<td>Piru</td>
+<td align="right">-3.068022</td>
+<td align="right">128.190647</td>
+<td>Deposit tidak diketahui</td>
+<td>Verbeek mencatat terjadi gempa besar disusul gelombang tsunami yang merusak pemukiman dan korban </td>
+<td>Historical</td>
+<td>30 September 1899</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>4m</td>
+<td>200m</td>
+<td> </td>
+<td>Gempa Bumi, Longsoran</td>
+<td>-3</td>
+<td>127.5</td>
+<td>22,25,28,30</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Ririmasse, 2014</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">151</td>
+<td>Maluku</td>
+<td>Kawa</td>
+<td align="right">-2.932475</td>
+<td align="right">128.137636</td>
+<td>Deposit tidak diketahui</td>
+<td>Verbeek mencatat terjadi gempa besar disusul gelombang tsunami yang merusak pemukiman dan korban </td>
+<td>Historical</td>
+<td>30 September 1899</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1.7m</td>
+<td>45m</td>
+<td> </td>
+<td>Gempa Bumi, Longsoran</td>
+<td>-3</td>
+<td>127.5</td>
+<td>22,25,28,30</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Ririmasse, 2014</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">152</td>
+<td>Maluku</td>
+<td>Taniwel</td>
+<td align="right">-2.852667</td>
+<td align="right">128.465719</td>
+<td>Deposit tidak diketahui</td>
+<td>Verbeek mencatat terjadi gempa besar disusul gelombang tsunami yang merusak pemukiman dan korban </td>
+<td>Historical</td>
+<td>30 September 1899</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>4.6m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi, Longsoran</td>
+<td>-3</td>
+<td>127.5</td>
+<td>22,25,28,30</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Ririmasse, 2014</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">153</td>
+<td>Maluku</td>
+<td>Masarete</td>
+<td align="right">-3.379619</td>
+<td align="right">127.134175</td>
+<td>Deposit tidak diketahui</td>
+<td>terdeteksi ada gempa berdasarkan seimograf di Jakarta, kemudian teramati adanya gelombang di Tifu dan Masarete</td>
+<td>Historical</td>
+<td>30 Maret 1903</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3</td>
+<td>127.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td>Di Tifu juga teramati adanya gelombang</td>
+</tr>
+<tr>
+<td align="right">154</td>
+<td>Maluku</td>
+<td>Saparua</td>
+<td align="right">-3.578058</td>
+<td align="right">128.651125</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat teramati adanya gelombang tsunami di Saparua</td>
+<td>Historical</td>
+<td>5 Juli 1904</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.6</td>
+<td>128.7</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">155</td>
+<td>Maluku</td>
+<td>Ambon</td>
+<td align="right">-3.661656</td>
+<td align="right">128.180494</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>3 Desember 1914</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.7</td>
+<td>128.2</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">156</td>
+<td>Maluku</td>
+<td>Saparua</td>
+<td align="right">-3.578058</td>
+<td align="right">128.651125</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat dalam sejarah terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>23 agustus 1917</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.6</td>
+<td>128.7</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">157</td>
+<td>Maluku</td>
+<td>Amahai, Kab. Maluku Tengah</td>
+<td align="right">-3.338139</td>
+<td align="right">128.927561</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi guncangan di laut berdasarkan keterangan nelayan dan tercatat</td>
+<td>Historical</td>
+<td>22 Februari 1922</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.3</td>
+<td>128.9</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">158</td>
+<td>Maluku</td>
+<td>Seram</td>
+<td align="right">-3.449308</td>
+<td align="right">128.445586</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa di Ambon dan Seram, teramati adanya kenaikan muka air laut di Seram</td>
+<td>Historical</td>
+<td>9-Sep-32</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.57</td>
+<td>128.35</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">159</td>
+<td>Maluku</td>
+<td>Banda Elat</td>
+<td align="right">-5.628128</td>
+<td align="right">133.008111</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan sejarah terjadi kerusakan akibat gelombang tsunami</td>
+<td>Historical</td>
+<td>1 Februari 1938</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-5.25</td>
+<td>130.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; McCueNOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">160</td>
+<td>Maluku</td>
+<td>Hutumuri, Ambon</td>
+<td align="right">-3.673219</td>
+<td align="right">128.299039</td>
+<td>Deposit ditemukan</td>
+<td>Observasi lapangan, catatan sejaran dan wawancara saksi mata kejadian tsunami</td>
+<td>Historical</td>
+<td>8 Oktober 1950</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Observasi lapangan/Antropologi wawancara terkait peristiwa tsunami</td>
+<td>Data geologi/Antropologi</td>
+<td>Catatan Sejarah</td>
+<td>2-3m</td>
+<td>200m</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.8</td>
+<td>128.3</td>
+<td>1,3,22,25,28</td>
+<td>Soloviev &amp; Go, 1974; Latief dkk., 2016; Rizal et al., 2020; NOAA</td>
+<td>Gempa disusul tsunami berdampak ke Hutumuri, Galala dan Hative Kecil, sedikit catatan terkait kejadian karena situasi politik yang panas TNI dan RMS</td>
+</tr>
+<tr>
+<td align="right">161</td>
+<td>Maluku</td>
+<td>Galala, Ambon</td>
+<td align="right">-3.664228</td>
+<td align="right">128.199989</td>
+<td>Deposit ditemukan</td>
+<td>Observasi lapangan, catatan sejaran dan wawancara saksi mata kejadian tsunami</td>
+<td>Historical</td>
+<td>8 Oktober 1950</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Observasi lapangan/Antropologi wawancara terkait peristiwa tsunami</td>
+<td>Data geologi/Antropologi</td>
+<td>Catatan Sejarah</td>
+<td>2-3m</td>
+<td>200m</td>
+<td> </td>
+<td>Gempa Bumi, Longsoran?</td>
+<td>-3.8</td>
+<td>128.3</td>
+<td>1,3,22,25,28</td>
+<td>Soloviev &amp; Go, 1974; Latief dkk., 2016; Rizal et al., 2020; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">162</td>
+<td>Maluku</td>
+<td>Teluk Ambon Baguala, Ambon</td>
+<td align="right">-3.620672</td>
+<td align="right">128.259133</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan sejarah gelombang besar yang memakan korban jiwa</td>
+<td>Historical</td>
+<td>6 Mei 1674</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td>100</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.7</td>
+<td>128.2</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; Pranantyo &amp; Cummins, 2020; Iida et al., 1967; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">163</td>
+<td>Maluku</td>
+<td>Pulau Banda</td>
+<td align="right">-4.567614</td>
+<td align="right">129.935519</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa, gelombang merusak 81 Rumah</td>
+<td>Historical</td>
+<td>15 Januari 1975</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-5</td>
+<td>130</td>
+<td>22,28,29,30</td>
+<td>Triyono dkk., 2019; Latief dkk., 2016; Supartoyo, dkk., 2014; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">164</td>
+<td>Maluku</td>
+<td>Namlea, Pulau Buru</td>
+<td align="right">-3.236797</td>
+<td align="right">127.111003</td>
+<td>Deposit tidak diketahui</td>
+<td>Terasa getaran gempa, kemudian disusul tsunami lokal di Namlea</td>
+<td>Historical</td>
+<td>28 Januari 2004</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.12</td>
+<td>127.4</td>
+<td>28,29</td>
+<td>Supartoyo, dkk., 2014; Triyono dkk., 2019; BMKG,2018; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">165</td>
+<td>Maluku</td>
+<td>Pela, Pulau Buru</td>
+<td align="right">-3.364039</td>
+<td align="right">127.235894</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa, likuefaksi, tsunami lokal di Pesisir teramati dan berdampak kerusakan di Desa Pela</td>
+<td>Historical</td>
+<td>14 Maret 2006</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Observasi lapangan</td>
+<td>Data geologi</td>
+<td>Catatan Sejarah</td>
+<td>3.5</td>
+<td>0.9</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.406</td>
+<td>127.365</td>
+<td>28,29</td>
+<td>Supartoyo, dkk., 2014; Triyono dkk., 2019; BMKG,2018; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">166</td>
+<td>Maluku</td>
+<td>Ambon</td>
+<td align="right">-3.706553</td>
+<td align="right">128.155722</td>
+<td>Deposit tidak diketahui</td>
+<td>pengamatan setempat terjadi gempa disertai tsunami tidak memakan korban jiwa</td>
+<td>Historical</td>
+<td>12 Maret 1983</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>3</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-4.056</td>
+<td>127.924</td>
+<td>28,29</td>
+<td>Latief dkk., 2016; BMKG, 2018; NOAA</td>
+<td>tsunami menerjang sepanjang pantai Ambon</td>
+</tr>
+<tr>
+<td align="right">167</td>
+<td>Maluku</td>
+<td>Hila </td>
+<td align="right">-3.580828</td>
+<td align="right">128.086314</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan Rumphius, air menghancurkan benteng</td>
+<td>Historical</td>
+<td>17 Februari 1674</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi, Longsoran</td>
+<td>-3.6</td>
+<td>127.7</td>
+<td>22,25,28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Pranantyo &amp; Cummins, 2020; Rumphius, 1675; Latief dkk., 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">168</td>
+<td>Maluku</td>
+<td>Larike</td>
+<td align="right">-3.759622</td>
+<td align="right">127.939558</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan Rumphius, gelombang menyebabkan Arumbe dan perahu hancur</td>
+<td>Historical</td>
+<td>17 Februari 1674</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.6</td>
+<td>127.7</td>
+<td>22,25,28,29</td>
+<td>Rumphius, 1675; Latief dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">169</td>
+<td>Maluku</td>
+<td>Nusatelo</td>
+<td align="right">-3.698228</td>
+<td align="right">127.923986</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan Rumphius, air di pantai surut lalu kembali dengan gelombang</td>
+<td>Historical</td>
+<td>17 Februari 1674</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.6</td>
+<td>127.7</td>
+<td>22,25,28,29</td>
+<td>Rumphius, 1675; Latief dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">170</td>
+<td>Maluku</td>
+<td>Ureng</td>
+<td align="right">-3.666861</td>
+<td align="right">127.951028</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan Rumphius, air di pantai surut setelah membanjiri pemukiman</td>
+<td>Historical</td>
+<td>17 Februari 1674</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.6</td>
+<td>127.7</td>
+<td>22,25,28,29</td>
+<td>Rumphius, 1675; Latief dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">171</td>
+<td>Maluku</td>
+<td>Lima</td>
+<td align="right">-3.644164</td>
+<td align="right">127.965058</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan Rumphius, air membawa material beragam ukuran menghantam benteng</td>
+<td>Historical</td>
+<td>17 Februari 1674</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.6</td>
+<td>127.7</td>
+<td>22,25,28,29</td>
+<td>Rumphius, 1675; Latief dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">172</td>
+<td>Maluku</td>
+<td>Seyt</td>
+<td align="right">-3.614783</td>
+<td align="right">128.007417</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan Rumphius, air menyebabkan rumah hancur tersapu </td>
+<td>Historical</td>
+<td>17 Februari 1674</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.6</td>
+<td>127.7</td>
+<td>22,25,28,29</td>
+<td>Rumphius, 1675; Latief dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">173</td>
+<td>Maluku</td>
+<td>Hitu Lama</td>
+<td align="right">-3.581458</td>
+<td align="right">128.179678</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan Rumphius, air menyebabkan benteng dan rumah sekitar benteng hancur</td>
+<td>Historical</td>
+<td>17 Februari 1674</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.6</td>
+<td>127.7</td>
+<td>22,25,28,29</td>
+<td>Rumphius, 1675; Latief dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">174</td>
+<td>Maluku</td>
+<td>Mamala</td>
+<td align="right">-3.555469</td>
+<td align="right">128.192836</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan Rumphius, rumah-rumah di desa tersapu air</td>
+<td>Historical</td>
+<td>17 Februari 1674</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.6</td>
+<td>127.7</td>
+<td>22,25,28,29</td>
+<td>Rumphius, 1675; Latief dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">175</td>
+<td>Maluku</td>
+<td>Tial</td>
+<td align="right">-3.634367</td>
+<td align="right">128.335603</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan Rumphius, air membanjiri desa warga, pohon kebun hancur</td>
+<td>Historical</td>
+<td>17 Februari 1674</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.6</td>
+<td>127.7</td>
+<td>22,25,28,29</td>
+<td>Rumphius, 1675; Latief dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">176</td>
+<td>Maluku</td>
+<td>Huamual</td>
+<td align="right">-3.376556</td>
+<td align="right">127.989844</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan Rumphius, gelombang merusak bangunan di pemukiman</td>
+<td>Historical</td>
+<td>17 Februari 1674</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.6</td>
+<td>127.7</td>
+<td>22,25,28,29</td>
+<td>Rumphius, 1675; Latief dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">177</td>
+<td>Maluku</td>
+<td>Oma Honimoha</td>
+<td align="right">-3.609036</td>
+<td align="right">128.417933</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan Rumphius, air membanjiri di Oma</td>
+<td>Historical</td>
+<td>17 Februari 1674</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.6</td>
+<td>127.7</td>
+<td>22,25,28,29</td>
+<td>Rumphius, 1675; Latief dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">178</td>
+<td>Maluku</td>
+<td>Paso Baguala</td>
+<td align="right">-3.625689</td>
+<td align="right">128.256972</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan Rumphius, air membanjiri rumah-rumah</td>
+<td>Historical</td>
+<td>17 Februari 1674</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.6</td>
+<td>127.7</td>
+<td>22,25,28,29</td>
+<td>Rumphius, 1675; Latief dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">179</td>
+<td>Maluku</td>
+<td>Ambon</td>
+<td align="right">-3.690786</td>
+<td align="right">128.180239</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan Rumphius, gempa di susul tsunami merusak bangunan di sekitar Benteng Victoria</td>
+<td>Historical</td>
+<td>17 Februari 1674</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>5-6m</td>
+<td>100-200</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.6</td>
+<td>127.7</td>
+<td>22,25,28,29</td>
+<td>Rumphius, 1675; Latief dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">180</td>
+<td>Maluku </td>
+<td>Pulau Banda</td>
+<td align="right">-4.563161</td>
+<td align="right">129.907769</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat terjadi tsunami namun tidak ada korban</td>
+<td>Historical</td>
+<td>17 Juni 1904</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-4.6</td>
+<td>129.9</td>
+<td>28,29</td>
+<td>Latief et al., 2000; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">181</td>
+<td>Maluku </td>
+<td>Ambon </td>
+<td align="right">-3.662625</td>
+<td align="right">128.182344</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi guncangan gempa diikuti gelombang yang terasakan di Ambon</td>
+<td>Historical</td>
+<td>19 November 1852</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.7</td>
+<td>128.2</td>
+<td>28,29,30</td>
+<td>Latief dkk., 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">182</td>
+<td>Maluku Utara</td>
+<td>Pulau Makian</td>
+<td align="right">0.33745</td>
+<td align="right">127.442511</td>
+<td>Deposit tidak diketahui</td>
+<td>Gelombang menghancurkan kapal</td>
+<td>Historical</td>
+<td>26 Mei 1904</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik?</td>
+<td> </td>
+<td> </td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Harris &amp; Major, 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">183</td>
+<td>Maluku Utara</td>
+<td>Ternate</td>
+<td align="right">0.797864</td>
+<td align="right">127.388561</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi tsunami yang menyebabkan kapal rusak</td>
+<td>Historical</td>
+<td>12 Agustus 1673</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik?</td>
+<td>1.375</td>
+<td>127.52</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Mutaqin et al., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td>berhubungan dengan aktivitas Gn Gamkonora</td>
+</tr>
+<tr>
+<td align="right">184</td>
+<td>Maluku Utara</td>
+<td>Ternate Tengah, Ternate</td>
+<td align="right">0.797603</td>
+<td align="right">127.293569</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi tsunami inundasi tercatat membanjiri sampai Benteng Oranje</td>
+<td>Historical</td>
+<td>14 Februari 1840</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>Gn Gamalama</td>
+<td> </td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974;Hidayat et al., 2020; Mutaqin et al., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">185</td>
+<td>Maluku Utara</td>
+<td>Ternate</td>
+<td align="right">0.800711</td>
+<td align="right">127.293569</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>27 September 1854</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>0.8</td>
+<td>127.4</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">186</td>
+<td>Maluku Utara</td>
+<td>Ternate</td>
+<td align="right">0.799078</td>
+<td align="right">127.293428</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>17 November 1857</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1.35</td>
+<td>125.2</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">187</td>
+<td>Maluku Utara</td>
+<td>Sidangoli,  Halmahera</td>
+<td align="right">0.891497</td>
+<td align="right">127.499231</td>
+<td>Deposit tidak diketahui</td>
+<td>catatan pengamatan setempat terjadi tsunami 10 m di teluk Sidangoli</td>
+<td>Historical</td>
+<td>28 Juni 1859</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>10m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1</td>
+<td>126.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Harris &amp; Major, 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">188</td>
+<td>Maluku Utara</td>
+<td>Ternate</td>
+<td align="right">0.774817</td>
+<td align="right">127.302731</td>
+<td>Deposit tidak diketahui</td>
+<td>catatan pengamatan setempat terjadi gempa disusul tsunami 1 m</td>
+<td>Historical</td>
+<td>29 Juli 1859</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>0.009</td>
+<td>125.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Harris &amp; Major, 2016;NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">189</td>
+<td>Maluku Utara</td>
+<td>Halmahera</td>
+<td align="right">-1.552256</td>
+<td align="right">128.049456</td>
+<td>Deposit tidak diketahui</td>
+<td>pengamatan setempat terjadi tsunami di  Halmahera Selatan, tetapi tidak ada kerusakan</td>
+<td>Historical</td>
+<td>6 Oktober 1860</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1.25</td>
+<td>128.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Harris &amp; Major, 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">190</td>
+<td>Maluku Utara</td>
+<td>Pulau Bacan</td>
+<td align="right">-0.418767</td>
+<td align="right">127.452858</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan mencatat terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>10 Juni 1891</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-0.5</td>
+<td>127.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">191</td>
+<td>Maluku Utara</td>
+<td>Galela, Halmahera</td>
+<td align="right">1.819125</td>
+<td align="right">127.849517</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan mencatat terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>10 Januari 1900</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1.82</td>
+<td>127.85</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">192</td>
+<td>Maluku Utara</td>
+<td>Kota Sanana</td>
+<td align="right">-2.056119</td>
+<td align="right">125.981286</td>
+<td>Deposit tidak diketahui</td>
+<td>Gempa disertai tsunami yang merusak rumah-rumah</td>
+<td>Historical</td>
+<td>24 Januari 1965</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-2.4</td>
+<td>126.1</td>
+<td>22,28</td>
+<td>Soloviev &amp; Go, 1974; Latief dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">193</td>
+<td>Maluku Utara</td>
+<td>Kab. Halmahera Barat</td>
+<td align="right">1.372953</td>
+<td align="right">127.485822</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi erupsi Gamkonora yang disertai gempa dan tsunami</td>
+<td>Historical</td>
+<td>20 Mei 1673</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik, Gempa Bumi</td>
+<td>1.375</td>
+<td>127.52</td>
+<td>28,29</td>
+<td>Iida et al., 1967; Triyono dkk., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td>terjadi erupsi Gamkonora yang disertai gempa dan tsunami</td>
+</tr>
+<tr>
+<td align="right">194</td>
+<td>Maluku Utara</td>
+<td>Gamalama, Ternate</td>
+<td align="right">0.802156</td>
+<td align="right">127.294375</td>
+<td>Deposit tidak diketahui</td>
+<td>Erupsi Gamalama menjadi pemicu terjadinya tsunami</td>
+<td>Historical</td>
+<td>1 Juli 1608</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>0.8</td>
+<td>127.325</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; Mutaqin et al., 2019 NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">195</td>
+<td>Maluku Utara</td>
+<td>Minahasa</td>
+<td align="right">1.237861</td>
+<td align="right">125.050792</td>
+<td>Deposit tidak diketahui</td>
+<td>Kapal terbawa ke daratan, kerusakan terjadi di pesisir pantai</td>
+<td>Historical</td>
+<td>13 Desember 1858</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1</td>
+<td>126</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; Harris &amp; Major, 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">196</td>
+<td>Maluku Utara</td>
+<td>Kab. Halmahera Barat</td>
+<td align="right">1.431508</td>
+<td align="right">127.520178</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa dan teramati adanya gelombang tsunami</td>
+<td>Historical</td>
+<td>10 Agustus 1968</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>0.4</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1.4</td>
+<td>126.2</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; Latief dkk., 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">197</td>
+<td>Maluku Utara</td>
+<td>Malifut-Kao, Kab. Halmahera Utara</td>
+<td align="right">1.106983</td>
+<td align="right">127.790214</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat terjadi gempa disusul tsunami yang teramati di Malifut-Kao</td>
+<td>Historical</td>
+<td>21 Januari 1994</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>2</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1.015</td>
+<td>127.733</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">198</td>
+<td>Maluku Utara</td>
+<td>Jailolo</td>
+<td align="right">1.058458</td>
+<td align="right">127.465944</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa dan teramati adanya gelombang tsunami</td>
+<td>Historical</td>
+<td>15-Nov-14</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Observasi lapangan</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>0.09</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1.893</td>
+<td>126.537</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">199</td>
+<td>Maluku Utara</td>
+<td>Ternate </td>
+<td align="right">0.781003</td>
+<td align="right">127.299808</td>
+<td>Deposit tidak diketahui</td>
+<td>Terjadi gempa besar yang menyebabkan tsunami, tercatat gelombang terasakan di Laut sekitar Sulawesi</td>
+<td>Historical</td>
+<td>13 Desember 1858</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>3.67</td>
+<td>125.5</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Supartoyo dkk., 2014</td>
+<td>Tsunami terjadi di Ternate, Tidore, Talaud, Minahasa Timur, Halmahera, Pulau Banggai</td>
+</tr>
+<tr>
+<td align="right">200</td>
+<td>Maluku Utara</td>
+<td>Makian</td>
+<td align="right">0.336425</td>
+<td align="right">127.44205</td>
+<td>Deposit tidak diketahui</td>
+<td> residen setempat mengalami kerusakan akibat gempa disusul gelombang tsunami</td>
+<td>Historical</td>
+<td>19 Juli 1646</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1.5</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi, Vulkanik</td>
+<td>0.32</td>
+<td>127.4</td>
+<td>28,29</td>
+<td>Harris &amp; major, 2016; NOAA</td>
+<td>Erupsi Gunung Kie Besi juga terjadi pada masa ini dan juga gempa</td>
+</tr>
+<tr>
+<td align="right">201</td>
+<td>Maluku Utara</td>
+<td>Ternate</td>
+<td align="right">0.787192</td>
+<td align="right">127.389878</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat adanya gempa dan aktivitas vulkanisme memicu terjadinya tsunami</td>
+<td>Historical</td>
+<td>9 November 1771</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi, Vulkanik</td>
+<td>0.8</td>
+<td>127.325</td>
+<td>28,29</td>
+<td>Mutaqin et al., 2019 NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">202</td>
+<td>Maluku Utara</td>
+<td>Pulau Obi</td>
+<td align="right">-1.465714</td>
+<td align="right">127.950756</td>
+<td>Deposit tidak diketahui</td>
+<td>gempa disertai tsunami, bangunan rumah hancur akibat gelombang</td>
+<td>Historical</td>
+<td>8 Oktober 1994</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>3</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1.258</td>
+<td>127.98</td>
+<td>22,28,29</td>
+<td>Geurhaneu dkk., 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">203</td>
+<td>Maluku Utara</td>
+<td>Taliabalu</td>
+<td align="right">-1.900303</td>
+<td align="right">124.819644</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa yang disertai tsunami</td>
+<td>Historical</td>
+<td>29-Nov-98</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>2.75</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-2.071</td>
+<td>124.891</td>
+<td>28,29</td>
+<td>Latief dkk., 2016; NOAA</td>
+<td>sedikit catatan yang menjelaskan kejadian tsunami ini</td>
+</tr>
+<tr>
+<td align="right">204</td>
+<td>NTB</td>
+<td>Sumbawa</td>
+<td align="right">-8.407436</td>
+<td align="right">117.553444</td>
+<td>Deposit ditemukan</td>
+<td>Erupsi Gunung Tambora menyebabkan tsunami di Sumbawa</td>
+<td>Historical</td>
+<td>10 April 1815</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Stratigrafi</td>
+<td>0.5 - 10</td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>-8.2</td>
+<td>118</td>
+<td>1,6,20,21,22,25,28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Tantri, 2019; Wibisono, 2017; Wirakusumah&amp;Rachmat, 2017; Haribuana&amp;Yuwono, 2018; Sutawidjaja et al., 2006;NOAA</td>
+<td>Erupsi Tambora</td>
+</tr>
+<tr>
+<td align="right">205</td>
+<td>NTB</td>
+<td>Bima</td>
+<td align="right">-8.441144</td>
+<td align="right">118.723008</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>29 Desember 1820</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>25</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-7</td>
+<td>119</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td>sumber gempa dari makassar</td>
+</tr>
+<tr>
+<td align="right">206</td>
+<td>NTB</td>
+<td>Bima</td>
+<td align="right">-8.312911</td>
+<td align="right">118.660581</td>
+<td>Deposit tidak diketahui</td>
+<td>Terjadi gempa kuat, gelombang tsunami tercatat berdampak pada perkampungan warga </td>
+<td>Historical</td>
+<td>5 Maret 1836</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8.3</td>
+<td>118.7</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">207</td>
+<td>NTB</td>
+<td>Bima</td>
+<td align="right">-8.311289</td>
+<td align="right">118.659564</td>
+<td>Deposit tidak diketahui</td>
+<td>Gempa kuat dan disusul tsunami</td>
+<td>Historical</td>
+<td>28 November 1836</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8.3</td>
+<td>118.7</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">208</td>
+<td>NTB</td>
+<td>Mangarai, Flores</td>
+<td align="right">-8.817028</td>
+<td align="right">120.420358</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat terjadi gempa disertai gelombang tsunami</td>
+<td>Historical</td>
+<td>14 April 1855</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-9</td>
+<td>121</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">209</td>
+<td>NTB</td>
+<td>Ampenen, Mataram</td>
+<td align="right">-8.5697</td>
+<td align="right">116.071978</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa dan gelombang besar di Pantai Ampenen</td>
+<td>Historical</td>
+<td>25 Juli 1856</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8.5</td>
+<td>116</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Harris &amp; Major, 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">210</td>
+<td>NTB</td>
+<td>Bima</td>
+<td align="right">-8.439136</td>
+<td align="right">118.723894</td>
+<td>Deposit tidak diketahui</td>
+<td>Erupsi Gunung Awu, 9-11 jam pasca erupsi terjadi gelombang tsunami yang berdampak di Bima</td>
+<td>Historical</td>
+<td>7 Juni 1892</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>3.7</td>
+<td>125.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Yudhicara et al., 2014</td>
+<td>Teletsunami, sumber dari Erupsi Gunung Awu</td>
+</tr>
+<tr>
+<td align="right">211</td>
+<td>NTB</td>
+<td>Bima</td>
+<td align="right">-8.439136</td>
+<td align="right">118.723894</td>
+<td>Deposit tidak diketahui</td>
+<td>Berdasarkan catatan terjadi gempa dan tsunami yang berdampak di Bima, Sumbawa dan Makassar</td>
+<td>Historical</td>
+<td>25 Desember 1904</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8.456</td>
+<td>118.723</td>
+<td>28,29</td>
+<td>Iida et al., 1967; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">212</td>
+<td>NTB</td>
+<td>Gawah Pudak, Lombok</td>
+<td align="right">-8.746</td>
+<td align="right">115.952394</td>
+<td>Deposit ditemukan</td>
+<td>Lapisan endapan pasir yang kontras dengan lainnya </td>
+<td>Historical</td>
+<td>19 Agustus 1977</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan sejarah, Radioaktif dating (Pb 210)</td>
+<td>15 m</td>
+<td>500 m</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-11.09</td>
+<td>118.46</td>
+<td>1,6,16,18,28,30</td>
+<td>Soloviev et al., 1992; Triyono dkk., 2019; Aswan, 2017; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">213</td>
+<td>NTB</td>
+<td>Labuhan Pandan, Lombok</td>
+<td align="right">-8.441889</td>
+<td align="right">116.711331</td>
+<td>Deposit ditemukan</td>
+<td>Bangunan hancur, material laut yang terbawa ke darat</td>
+<td>Historical</td>
+<td>5 Agustus 2018</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Stratigrafi</td>
+<td>0.5</td>
+<td>60</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8.344</td>
+<td>116.463</td>
+<td>1,3,4,5,6,7,15,25,28,29,30</td>
+<td>Triyono dkk., 2019; Tsimopoulou, 2020; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">214</td>
+<td>NTB</td>
+<td>Gili Trawangan, Lombok</td>
+<td align="right">-8.348789</td>
+<td align="right">116.038564</td>
+<td>Deposit ditemukan</td>
+<td>Lapisan endapan pasir yang kontras dengan lainnya </td>
+<td>Historical</td>
+<td>15 Maret 1897</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan sejarah, Radioaktif dating (Pb 210)</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-6.799894</td>
+<td>120.800972</td>
+<td>1,6,16,18,28,30</td>
+<td>Aswan et al., 2017; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">215</td>
+<td>NTB</td>
+<td>Pulau Belang</td>
+<td align="right">-8.547536</td>
+<td align="right">116.770025</td>
+<td>Deposit ditemukan</td>
+<td>Lapisan pasir dengan fragmen koral</td>
+<td>Prehistorical</td>
+<td>1540-1698</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>60</td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,6,9,18</td>
+<td>Mutaqin et al., 2021</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">216</td>
+<td>NTB</td>
+<td>Kiantar, Sumbawa Barat</td>
+<td align="right">-8.5476</td>
+<td align="right">116.786461</td>
+<td>Deposit ditemukan</td>
+<td>Lapisan sedimen sortasi buruk mengandung fragmen koral dan cangkang</td>
+<td>Prehistorical</td>
+<td>Abad 4</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>80-90</td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>1,2,3,5,6,9,14,18</td>
+<td>Mutaqin et al., 2021</td>
+<td>ada 10 sampel yang di dating, umurnya beragam sehingga tahun menggunakan abad 4 dan 9, fosil beragam umur dalam 1 lapisan mengindikasikan tsunami</td>
+</tr>
+<tr>
+<td align="right">217</td>
+<td>NTB</td>
+<td>Kiantar, Sumbawa Barat</td>
+<td align="right">-8.5476</td>
+<td align="right">116.786461</td>
+<td>Deposit ditemukan</td>
+<td>Lapisan sedimen sortasi buruk mengandung fragmen koral dan cangkang</td>
+<td>Prehistorical</td>
+<td>Abad 9</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>50-140</td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>1,2,3,5,6,9,14,18</td>
+<td>Mutaqin et al., 2021</td>
+<td>ada 10 sampel yang di dating, umurnya beragam sehingga tahun menggunakan abad 4 dan 9, fosil beragam umur dalam 1 lapisan mengindikasikan tsunami</td>
+</tr>
+<tr>
+<td align="right">218</td>
+<td>NTB</td>
+<td>Pulau Belang</td>
+<td align="right">-8.549986</td>
+<td align="right">116.769589</td>
+<td>Deposit ditemukan</td>
+<td>Lapisan pasir dengan fragmen koral, pumice, dan ash vulkanik</td>
+<td>Prehistorical</td>
+<td>10 Juni 1903</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Radiocarbon dating</td>
+<td> </td>
+<td> </td>
+<td>50</td>
+<td>Vulkanik</td>
+<td> </td>
+<td> </td>
+<td>1,3,5,6,18,28</td>
+<td>Mutaqin, 2018</td>
+<td>Erupsi Samalas menghasilkan tsunami sebagai dampak lain, dampak utama adalah erupsinya yang besar</td>
+</tr>
+<tr>
+<td align="right">219</td>
+<td>NTT</td>
+<td>Flores Selatan</td>
+<td align="right">-8.889317</td>
+<td align="right">121.222092</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa bersumber di Kupang, memicu tsunami terdampak di Flores dan Timor</td>
+<td>Historical</td>
+<td>18 Desember 1904</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-10.217</td>
+<td>123.633</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Supartoyo dkk., 2014; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">220</td>
+<td>NTT</td>
+<td>Kupang</td>
+<td align="right">-9.447075</td>
+<td align="right">123.896608</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa di Pulau Timor, laut mengalami osilasi dan gelombang menerjang pesisir Kupang</td>
+<td>Historical</td>
+<td>5 Oktober 1891</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-9</td>
+<td>124</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">221</td>
+<td>NTT</td>
+<td>Paluweh</td>
+<td align="right">-8.512361</td>
+<td align="right">121.686431</td>
+<td>Deposit tidak diketahui</td>
+<td>Erupsi gunung Rokatenda memicu tsunami terdampak di Paluweh</td>
+<td>Historical</td>
+<td>7 Agustus 1927</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>-8.6</td>
+<td>121.7</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al., 1967; Triyono dkk., 2019</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">222</td>
+<td>NTT</td>
+<td>Waka, Flores</td>
+<td align="right">-8.499369</td>
+<td align="right">121.649547</td>
+<td>Deposit tidak diketahui</td>
+<td>Erupsi gunung Rokatenda menyebabkan tsunami di pantai utara Pulau Flores</td>
+<td>Historical</td>
+<td>4 Agustus 1928</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>10</td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>-8.32</td>
+<td>121.708</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Mutaqin et al., 2019; Supartoyo dkk., 2014 NOAA</td>
+<td>Erupsi Rokatenda</td>
+</tr>
+<tr>
+<td align="right">223</td>
+<td>NTT</td>
+<td>Pulau Lembata </td>
+<td align="right">-8.475222</td>
+<td align="right">123.556861</td>
+<td>Deposit ditemukan</td>
+<td>Bangunan hancur, korban meninggal akibat gelombang</td>
+<td>Historical</td>
+<td>18 Juli 1979</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Catatan sejarah</td>
+<td>10</td>
+<td>400-500</td>
+<td> </td>
+<td>Vulkanik, Longsoran bawah laut</td>
+<td>-8.478889</td>
+<td>123.559528</td>
+<td>1,22,25,28,29</td>
+<td>Yudhicara dkk., 2015; Soloviev et al., 1992; Triyono dkk., 2019; Mutaqin et al., 2019; Lassa, 2009; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">224</td>
+<td>NTT</td>
+<td>Pesisir Utara Kab. Sikka</td>
+<td align="right">-8.526442</td>
+<td align="right">122.047756</td>
+<td>Deposit tidak diketahui</td>
+<td>Sumber gempa dari Makassar, terjadi gelombang tsunami di Pesisir Utara Sikka</td>
+<td>Historical</td>
+<td>29 Desember 1820</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>25</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-5.1</td>
+<td>119.4</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019</td>
+<td>Teletsunami, sumber dari Makassar</td>
+</tr>
+<tr>
+<td align="right">225</td>
+<td>NTT</td>
+<td>Larantuka</td>
+<td align="right">-8.346325</td>
+<td align="right">122.952742</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>25 Desember 1982</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td>100</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8.54</td>
+<td>122.78</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">226</td>
+<td>NTT</td>
+<td>Pulau Pantar</td>
+<td align="right">-8.439886</td>
+<td align="right">124.039889</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi tsunami teramati gelombang di pantai selatan Pulau Pantar</td>
+<td>Historical</td>
+<td>26-Nov-87</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>1.5</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8.4</td>
+<td>124</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">227</td>
+<td>NTT</td>
+<td>Kalabahi, Kabupaten Alor</td>
+<td align="right">-8.21885</td>
+<td align="right">124.514408</td>
+<td>Deposit tidak diketahui</td>
+<td>Tsunami lokal menyebabkan kerusakan dan tenggelamnya kapal nelayan</td>
+<td>Historical</td>
+<td>4 Juli 1991 </td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8.099</td>
+<td>124.681</td>
+<td>28</td>
+<td>Triyono dkk., 2019</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">228</td>
+<td>NTT</td>
+<td>Nebe, Kabupaten Sikka</td>
+<td align="right">-8.464689</td>
+<td align="right">122.527019</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir, kerusakan bangunan, koral terbawa ke daratan</td>
+<td>Historical</td>
+<td>12 Desember 1992</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Catatan sejarah</td>
+<td>26.2</td>
+<td>500</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8.48</td>
+<td>121.896</td>
+<td>1,3,4,5,22,25,28,29</td>
+<td>Triyono dkk., 2019; Shi et al., 1994; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">229</td>
+<td>NTT</td>
+<td>Dili</td>
+<td align="right">-8.548361</td>
+<td align="right">125.566578</td>
+<td>Deposit tidak diketahui</td>
+<td>tsunami lokal yang menyebabkan kerusakan di Pesisir Dili</td>
+<td>Historical</td>
+<td>14 Mei 1995</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>4</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8.378</td>
+<td>125.127</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td>Tercatat karena Dili sebelum 1999 adalah bagian dari Indonesia, kini Timor Leste</td>
+</tr>
+<tr>
+<td align="right">230</td>
+<td>NTT</td>
+<td>Kalabahi, Kabupaten Alor</td>
+<td align="right">-8.142403</td>
+<td align="right">124.592981</td>
+<td>Deposit tidak diketahui</td>
+<td>gempa disertai tsunami lokal, air laut memasuki daratan sampai 100m</td>
+<td>Historical</td>
+<td>11-Nov-04</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>2</td>
+<td>100</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8.152</td>
+<td>124.868</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">231</td>
+<td>NTT</td>
+<td>Pulau Lembata</td>
+<td align="right">-8.469992</td>
+<td align="right">123.552767</td>
+<td>Deposit tidak diketahui</td>
+<td>Erupsi bawah laut Iliwerung memicu terjadinya tsunami</td>
+<td>Historical</td>
+<td>17 Agustus 1983</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>-8.54</td>
+<td>123.59</td>
+<td>28,29</td>
+<td>Hidayat et al., 2020 (IOP)</td>
+<td>Erupsi Gunung Hobal/Anak iliwerung</td>
+</tr>
+<tr>
+<td align="right">232</td>
+<td>NTT</td>
+<td>Riangkroko</td>
+<td align="right">-8.154</td>
+<td align="right">122.784056</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir, kerusakan bangunan, koral terbawa ke daratan</td>
+<td>Historical</td>
+<td>12 Desember 1992</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Stratigrafi</td>
+<td>19.8</td>
+<td>600</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-8.48</td>
+<td>121.896</td>
+<td>1,3,22,25,28,30</td>
+<td>Yeh et al., 1993</td>
+<td>kejadian tsunami 12 desember 1992, meluas dampak sepanjang garis pantai utara Flores</td>
+</tr>
+<tr>
+<td align="right">233</td>
+<td>Papua</td>
+<td>Pulau Biak</td>
+<td align="right">-0.977131</td>
+<td align="right">136.121875</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir yang kontras dari lapisan lain</td>
+<td>Historical</td>
+<td>17 Februari 1996</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Catatan sejarah</td>
+<td>5.4 - 7.7 m</td>
+<td>450m</td>
+<td> </td>
+<td>Gempa bumi</td>
+<td>-0.891</td>
+<td>136.952</td>
+<td>1,3,6,18,22,25,28,29</td>
+<td>Yudhicara, 2012; Triyono dkk., 2019; NOAA</td>
+<td>sumber adalah gempa berjarak 60 km dari utara pulau biak</td>
+</tr>
+<tr>
+<td align="right">234</td>
+<td>Papua</td>
+<td>Ansus, Kepulaua Yapen</td>
+<td align="right">-1.733981</td>
+<td align="right">135.816589</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi kerusakan akibat gelombang tsunami di Ansus dan Pom</td>
+<td>Historical</td>
+<td>26 Mei 1914</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>0.1</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1.829</td>
+<td>136.943</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; BMKG, 2018; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">235</td>
+<td>Papua</td>
+<td>Pantai Holtekam, Kota Jayapura</td>
+<td align="right">-2.626553</td>
+<td align="right">140.779508</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gelombang tsunami yang merusak kapal, jembatan di Pantai Holtekam</td>
+<td>Historical</td>
+<td>13 Maret 2011</td>
+<td>Moderate</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>0.1</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>38.322</td>
+<td>142.369</td>
+<td>22,25,28,29,30</td>
+<td>Triyono dkk., 2019; BMKG, 2018</td>
+<td>Gelombang Teletsunami dari Jepang. Terjadi gempa dan tsunami di Jepang pada 11 Maret 2011</td>
+</tr>
+<tr>
+<td align="right">236</td>
+<td>Papua</td>
+<td>Irian Jaya</td>
+<td align="right">-5.421167</td>
+<td align="right">137.930281</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>6-Nov-15</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1</td>
+<td>136</td>
+<td>28</td>
+<td>NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">237</td>
+<td>Papua</td>
+<td>Pulau Yapen</td>
+<td align="right">-1.742311</td>
+<td align="right">136.744233</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat terjadi gempa disertai tsunami</td>
+<td>Historical</td>
+<td>22 Juni 1957</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>1.8</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1.5</td>
+<td>137</td>
+<td>28</td>
+<td>NOAA</td>
+<td>Informasi mengenai kejadian tsunami minim, namun tercatat terjadi gempa 7.5 SR</td>
+</tr>
+<tr>
+<td align="right">238</td>
+<td>Papua </td>
+<td>Pulau Yapen</td>
+<td align="right">-1.658008</td>
+<td align="right">136.062572</td>
+<td>Deposit tidak diketahui</td>
+<td>gempa kuat disertai tsunami lokal teramati di Yapen</td>
+<td>Historical</td>
+<td>12-Sep-79</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1.679</td>
+<td>136.04</td>
+<td>28,29</td>
+<td>Soloviev et al., 1992; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">239</td>
+<td>Papua Barat</td>
+<td>Kaimana</td>
+<td align="right">-3.666967</td>
+<td align="right">133.759894</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa kemudian disusul dengan tsunami</td>
+<td>Historical</td>
+<td>23 Mei 1915</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>0.5m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.644</td>
+<td>133.695</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">240</td>
+<td>Papua Barat</td>
+<td>Fakfak</td>
+<td align="right">-2.933594</td>
+<td align="right">132.29745</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa kemudian disusul dengan tsunami</td>
+<td>Historical</td>
+<td>6-Nov-37</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>0.5m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3</td>
+<td>132.3</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">241</td>
+<td>Papua Barat</td>
+<td>Fakfak</td>
+<td align="right">-2.934494</td>
+<td align="right">132.306842</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa kemudian teramati adanya gelombang di laut setinggi 0.5m</td>
+<td>Historical</td>
+<td>13 Februari 1938</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>0.5m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3</td>
+<td>132.3</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">242</td>
+<td>Papua Barat </td>
+<td>Teluk Cendrawasih</td>
+<td align="right">-2.854614</td>
+<td align="right">134.484114</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa kuat di sertai tsunami yag berdampak merusak bangunan dan korban 250 orang</td>
+<td>Historical</td>
+<td>23 Mei 1864</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>2.5-3</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1</td>
+<td>135</td>
+<td>22,28</td>
+<td>Triyono dkk., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">243</td>
+<td>Papua Barat </td>
+<td>Oransbari</td>
+<td align="right">-1.338867</td>
+<td align="right">134.276108</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa kuat, likuefaksi dan tsunami lokal yang merusak bangunan</td>
+<td>Historical</td>
+<td>10 Oktober 2002</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>3-5m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1.73</td>
+<td>134.34</td>
+<td>22,25,28,29,30</td>
+<td>Triyono dkk., 2019; BMKG, 2018; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">244</td>
+<td>Papua Barat </td>
+<td>Manokwari</td>
+<td align="right">-0.7473</td>
+<td align="right">133.840119</td>
+<td>Deposit ditemukan</td>
+<td>terjadi gempa dan stasiun observasi tsunami mencatat adanya tsunami</td>
+<td>Historical</td>
+<td>3 Januari 2009</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Observasi lapangan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan sejarah</td>
+<td>0.2-0.78</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-0.354</td>
+<td>132.954</td>
+<td>1,22,28,29</td>
+<td>Triyono dkk., 2019; Fujii et al., 2011</td>
+<td>Tidak banyak catatan tentang tsunami, tidak banyak kerusakan dan korban</td>
+</tr>
+<tr>
+<td align="right">245</td>
+<td>Sulawesi Barat</td>
+<td>Kab. Majene</td>
+<td align="right">-3.551075</td>
+<td align="right">118.954922</td>
+<td>Deposit ditemukan</td>
+<td>Bangunan hancur, korban meninggal akibat gelombang</td>
+<td>Historical</td>
+<td>23 Februari 1969</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi,sejarah</td>
+<td>Catatan sejarah</td>
+<td>1.5 - 4 m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.1</td>
+<td>118.9</td>
+<td>1,3,4,22,25,28,29</td>
+<td>Soloviev et al., 1992; Triyono dkk., 2019; Susanto dkk., 2020; NOAA</td>
+<td>Sumber gempa dari selat makassar</td>
+</tr>
+<tr>
+<td align="right">246</td>
+<td>Sulawesi Barat</td>
+<td>Tinambung</td>
+<td align="right">-3.519367</td>
+<td align="right">119.017681</td>
+<td>Deposit ditemukan</td>
+<td>Bangunan hancur, korban meninggal akibat gelombang</td>
+<td>Historical</td>
+<td>11-Apr-67</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-3.7</td>
+<td>119.3</td>
+<td>1,3,4,22,25,28,29</td>
+<td>Soloviev &amp; Go, 1974; Susanto dkk., 2020; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">247</td>
+<td>Sulawesi Barat</td>
+<td>Mamuju</td>
+<td align="right">-2.44135</td>
+<td align="right">119.136136</td>
+<td>Deposit ditemukan</td>
+<td>Bangunan hancur, korban meninggal akibat gelombang</td>
+<td>Historical</td>
+<td>8 Januari 1984</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan sejarah</td>
+<td>0.1</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-2.823</td>
+<td>118.8</td>
+<td>1,3,4,22,25,28,29</td>
+<td>Triyono dkk., 2019; Susanto dkk., 2020; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">248</td>
+<td>Sulawesi Barat</td>
+<td>Pasang Kayu</td>
+<td align="right">-1.173806</td>
+<td align="right">119.360944</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat terjadi tsunami yang menerjang Pasang Kayu pesisir utara Mamuju</td>
+<td>Historical</td>
+<td>19 Desember 1928</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>7</td>
+<td>124</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; Latief et al., 2000; Supartoyo dkk., 2014</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">249</td>
+<td>Sulawesi Selatan</td>
+<td>Bulukumba</td>
+<td align="right">-5.5599</td>
+<td align="right">120.19775</td>
+<td>Deposit tidak diketahui</td>
+<td>Gelombang tsunami menerjang pelabuhan Bulukumba</td>
+<td>Historical</td>
+<td>29 Desember 1820</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>25</td>
+<td>300-400m</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-7</td>
+<td>119</td>
+<td>25, 28</td>
+<td>Iida et al., 1967; Soloviev &amp; Go, 1974; Pertiwi, 2018</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">250</td>
+<td>Sulawesi Selatan</td>
+<td>Kayuadi</td>
+<td align="right">-6.925194</td>
+<td align="right">120.844158</td>
+<td>Deposit tidak diketahui</td>
+<td>berdasarkan catatan terjadi gempa dan setengah jam setelahnya terjadi gelombang laut diduga tsunami</td>
+<td>Historical</td>
+<td>15 Maret 1897</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>28</td>
+<td>Soloviev &amp; Go, 1974</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">251</td>
+<td>Sulawesi Tengah</td>
+<td>Pulau Banggai</td>
+<td align="right">-1.591456</td>
+<td align="right">123.498631</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat terjadi tsunami yang merusak di pesisir Kepulauan Banggai</td>
+<td>Historical</td>
+<td>29 Juli 1859</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>28</td>
+<td>Soloviev &amp; Go, 1974</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">252</td>
+<td>Sulawesi Tengah</td>
+<td>Tolitoli</td>
+<td align="right">1.043592</td>
+<td align="right">120.808867</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa kemudian disusul dengan tsunami</td>
+<td>Historical</td>
+<td>2 Februari 1904</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1.5</td>
+<td>120.8</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">253</td>
+<td>Sulawesi Tengah</td>
+<td>Donggala</td>
+<td align="right">0.480681</td>
+<td align="right">119.981525</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dugaan paleotsunami berdasarkan pengukuran AMS</td>
+<td>Historical</td>
+<td>30 Januari 1920</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan sejarah</td>
+<td>2m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>0.87</td>
+<td>122.92</td>
+<td>1,3,9,28,30</td>
+<td>Soloviev &amp; Go, 1974;Kusumawardani dkk., 2018; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">254</td>
+<td>Sulawesi Tengah</td>
+<td>Teluk Palu, Palu</td>
+<td align="right">-0.877461</td>
+<td align="right">119.870353</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dugaan paleotsunami berdasarkan pengukuran AMS</td>
+<td>Historical</td>
+<td>1 Desember 1927</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan sejarah</td>
+<td>15m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-0.7</td>
+<td>119.7</td>
+<td>1,3,9,28,30</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Kusumawardani dkk., 2018; Prasetya et al., 2001; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">255</td>
+<td>Sulawesi Tengah</td>
+<td>Toribulu</td>
+<td align="right">-0.346714</td>
+<td align="right">120.031247</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa kemudian disusul dengan tsunami</td>
+<td>Historical</td>
+<td>20 Mei 1938</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>2-3m</td>
+<td>80m</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-0.7</td>
+<td>120.3</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">256</td>
+<td>Sulawesi Tengah</td>
+<td>Tambu, Donggala</td>
+<td align="right">-0.0649</td>
+<td align="right">119.861417</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan sejarah, kerusakan bangunan akibat gelombang</td>
+<td>Historical</td>
+<td>15 Agustus 1968</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan sejarah</td>
+<td>9-10m</td>
+<td>500m</td>
+<td> </td>
+<td>Gempa Bumi, Longsoran</td>
+<td>0.7</td>
+<td>119.8</td>
+<td>1,3,22,25,28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Prasetya, 2001</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">257</td>
+<td>Sulawesi Tengah</td>
+<td>Mamboro, Palu</td>
+<td align="right">-0.799989</td>
+<td align="right">119.875306</td>
+<td>Deposit tidak diketahui</td>
+<td>Endapan sedimen</td>
+<td>Historical</td>
+<td>19 Mei 1938</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan sejarah</td>
+<td>3m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1</td>
+<td>120</td>
+<td>1,3,9,28,30</td>
+<td>Iida et al., 1967; NOAA; Kusumawardani dkk., 2018</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">258</td>
+<td>Sulawesi Tengah</td>
+<td>Tonggolobibi, Donggala</td>
+<td align="right">0.482822</td>
+<td align="right">119.985617</td>
+<td>Deposit tidak diketahui</td>
+<td>Lapisan endapan pasir berbeda, bangunan hancur</td>
+<td>Historical</td>
+<td>1 Januari 1996</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Stratigrafi</td>
+<td>2-4m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>0.729</td>
+<td>119.931</td>
+<td>1,3,4,22,25,28</td>
+<td>Triyono dkk., 2019; Pelinovsky et al., 1997; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">259</td>
+<td>Sulawesi Tengah</td>
+<td>Palu</td>
+<td align="right">-0.872794</td>
+<td align="right">119.872475</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir, kerusakan bangunan, kandungan rip up clast</td>
+<td>Historical</td>
+<td>28-Sep-21</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>Stratigrafi</td>
+<td>2-10.73m</td>
+<td>310</td>
+<td>1-4 cm</td>
+<td>Gempa Bumi</td>
+<td>-0.177</td>
+<td>119.821</td>
+<td>1,2,3,4,5,6,15,22,25,28,29</td>
+<td>Triyono dkk., 2019; Putra et al., 2019; Omira et al. 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">260</td>
+<td>Sulawesi Tengah</td>
+<td>Luwuk, Banggai</td>
+<td align="right">-0.945683</td>
+<td align="right">122.799033</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan pengmatan terjadi tsunami akibat gempa bumi, merusak bangunan di pesisir Pantai Luwuk</td>
+<td>Historical</td>
+<td>4 Mei 2000</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>5</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1.105</td>
+<td>123.573</td>
+<td>22,28,29</td>
+<td>Latief dkk., 2016; NOAA</td>
+<td>Catatan detil mengenai tsunami terbatas</td>
+</tr>
+<tr>
+<td align="right">261</td>
+<td>Sulawesi Utara</td>
+<td>Kema, Kab. Minahasa Utara</td>
+<td align="right">1.357844</td>
+<td align="right">125.078178</td>
+<td>Deposit tidak diketahui</td>
+<td>terasa gempa kuat di Minahasa kemudian di Pelabuhan Kema air surut dan ikan terlihat di pesisir, terjadi gelombang tsunami</td>
+<td>Historical</td>
+<td>8 Februari 1845</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi, Vulkanik</td>
+<td>1.5</td>
+<td>124.85</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Mutaqin et al., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td>Pada 1845 terjadi Erupsi Gunung Soputan dan terjadi pula Gempa Kuat. Sebab Tsunami diduga akibat gempa (Triyono dkk., 2019; Harris &amp; Major 2016). Namun Erupsi Soputan kemungkinan berkorelasi (Mutaqin et al. 2019)</td>
+</tr>
+<tr>
+<td align="right">262</td>
+<td>Sulawesi Utara</td>
+<td>Sangihe</td>
+<td align="right">3.566539</td>
+<td align="right">125.510869</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan erupsi Gunung Awu menyebabkan tsunami</td>
+<td>Historical</td>
+<td>2 Maret 1856</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>3.67</td>
+<td>125.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Bani et al., 2020; Mutaqin et al., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">263</td>
+<td>Sulawesi Utara</td>
+<td>Kema, Kab. Minahasa Utara</td>
+<td align="right">1.362917</td>
+<td align="right">125.075864</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa yang disertai tsunami</td>
+<td>Historical</td>
+<td>28 Juni 1859</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">264</td>
+<td>Sulawesi Utara</td>
+<td>Belang, Minahasa Tenggara</td>
+<td align="right">0.947742</td>
+<td align="right">124.793061</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa yang disertai tsunami</td>
+<td>Historical</td>
+<td>17 Desember 1859</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>Sangihe Mega Thrust</td>
+<td> </td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Harris &amp; Major, 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">265</td>
+<td>Sulawesi Utara</td>
+<td>Kema, Kab. Minahasa Utara</td>
+<td align="right">1.327633</td>
+<td align="right">125.065894</td>
+<td>Deposit tidak diketahui</td>
+<td>pengamatan setempat Tsunami mencapai atap gudang batu bara </td>
+<td>Historical</td>
+<td>25 Desember 1859</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>Sangihe Mega Thrust</td>
+<td> </td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Harris &amp; Major, 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">266</td>
+<td>Sulawesi Utara</td>
+<td>Tagulandang</td>
+<td align="right">2.327236</td>
+<td align="right">125.395267</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan sejarah, Berita Nature agustus 1871 mencatat ada erupsi disertai tsunami</td>
+<td>Historical</td>
+<td>3 Maret 1871</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>25m</td>
+<td>180m</td>
+<td> </td>
+<td>Vulkanik</td>
+<td>  2?17&#39;58.56&quot;N</td>
+<td>125?22&#39;12.34&quot;E</td>
+<td>25, 28</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Meyer, 1871; Mutaqin et al., 2019; Harris &amp; Major, 2016; NOAA</td>
+<td>Erupsi Gunung Ruang</td>
+</tr>
+<tr>
+<td align="right">267</td>
+<td>Sulawesi Utara</td>
+<td>Manado</td>
+<td align="right">1.493881</td>
+<td align="right">124.837244</td>
+<td>Deposit tidak diketahui</td>
+<td>Gempa besar dan erupsi Banua Wuhu menyebabkan tsunami yang berdampak luas</td>
+<td>Historical</td>
+<td>6 September 1889</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>2m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi, Vulkanik</td>
+<td> </td>
+<td> </td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Mutaqin et al., 2019</td>
+<td>Erupsi Banua Wuhu, gunung api bawah laut</td>
+</tr>
+<tr>
+<td align="right">268</td>
+<td>Sulawesi Utara</td>
+<td>Kema, Kab. Minahasa Utara</td>
+<td align="right">1.358042</td>
+<td align="right">125.075864</td>
+<td>Deposit tidak diketahui</td>
+<td>Gempa besar dan erupsi Banua Wuhu menyebabkan tsunami yang berdampak luas</td>
+<td>Historical</td>
+<td>6 September 1889</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>3-4m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi, Vulkanik</td>
+<td> </td>
+<td> </td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Mutaqin et al., 2019</td>
+<td>Erupsi Banua Wuhu, gunung api bawah laut</td>
+</tr>
+<tr>
+<td align="right">269</td>
+<td>Sulawesi Utara</td>
+<td>Tahuna, Sangihe</td>
+<td align="right">3.610225</td>
+<td align="right">125.501128</td>
+<td>Deposit tidak diketahui</td>
+<td>air surut, ikan-ikan terlihat, kemudian tersapu oleh gelombang tsunami</td>
+<td>Historical</td>
+<td>6 September 1889</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>1.5m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi, Vulkanik</td>
+<td>2.2</td>
+<td>124.4</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Mutaqin et al., 2019</td>
+<td>Erupsi Banua Wuhu, gunung api bawah laut</td>
+</tr>
+<tr>
+<td align="right">270</td>
+<td>Sulawesi Utara</td>
+<td>Sangihe</td>
+<td align="right">3.566539</td>
+<td align="right">125.510869</td>
+<td>Deposit tidak diketahui</td>
+<td>Catatan erupsi Gunung Awu menyebabkan tsunami</td>
+<td>Historical</td>
+<td>7 Juni 1892</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>0.75</td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>3.67</td>
+<td>125.5</td>
+<td>25,28,29</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Triyono dkk., 2019; Bani et al., 2020; Mutaqin et al., 2019</td>
+<td>Erupsi Gunung Awu, dampak tsunami luas</td>
+</tr>
+<tr>
+<td align="right">271</td>
+<td>Sulawesi Utara</td>
+<td>Talaud</td>
+<td align="right">4.240231</td>
+<td align="right">126.789447</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat terjadi gempa disertai tsunami merusak bangunan dipesisir</td>
+<td>Historical</td>
+<td>30 Maret 1907</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>4m</td>
+<td>50m</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>3</td>
+<td>122</td>
+<td>25,28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">272</td>
+<td>Sulawesi Utara</td>
+<td>Lirung, Talaud</td>
+<td align="right">3.959478</td>
+<td align="right">126.664797</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat terjadi gempa disertai tsunami merusak bangunan dipesisir</td>
+<td>Historical</td>
+<td>18 Desember 1910</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>0.4</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>4</td>
+<td>127</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">273</td>
+<td>Sulawesi Utara</td>
+<td>Mahengetang, Kepulauan Sangihe</td>
+<td align="right">3.149492</td>
+<td align="right">125.452447</td>
+<td>Deposit tidak diketahui</td>
+<td>Erupsi gunung  api bawah laut Mahengetang memicu terjadinya tsunami teramati di Kepulauan Sangihe</td>
+<td>Historical</td>
+<td>3-Apr-19</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>1-5m</td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>3.138</td>
+<td>125.491</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Mutaqin et al., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">274</td>
+<td>Sulawesi Utara</td>
+<td>Amurang</td>
+<td align="right">1.185425</td>
+<td align="right">124.569011</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat terjadi gempa disertai tsunami </td>
+<td>Historical</td>
+<td>11-Sep-30</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1.2</td>
+<td>124.57</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">275</td>
+<td>Sulawesi Utara</td>
+<td>Salebabu</td>
+<td align="right">3.940806</td>
+<td align="right">126.691442</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat terjadi gempa disertai tsunami </td>
+<td>Historical</td>
+<td>1-Apr-36</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>3m</td>
+<td>500m</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>3.6</td>
+<td>126.7</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">276</td>
+<td>Sulawesi Utara</td>
+<td>Kabupaten Minahasa</td>
+<td align="right">1.066578</td>
+<td align="right">124.962106</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa kuat di Gorontalo, dan Sulawesi Utara. Teramati adanya gelombang di Minahasa, air laut masuk membanjiri sawah warga</td>
+<td>Historical</td>
+<td>22 Desember 1939</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>0</td>
+<td>123</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">277</td>
+<td>Sulawesi Utara</td>
+<td>Sangihe</td>
+<td align="right">3.723844</td>
+<td align="right">125.505439</td>
+<td>Deposit tidak diketahui</td>
+<td>Erupsi Gunung Awu memicu terjadinya tsunami terdampak di Sangihe</td>
+<td>Historical</td>
+<td>14 Maret 1913</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>4.8</td>
+<td>126.6</td>
+<td>28,29</td>
+<td>Iida et al., 1967; Hidayat et al., 2020; NOAA</td>
+<td>Erupsi Gunung Awu</td>
+</tr>
+<tr>
+<td align="right">278</td>
+<td>Sulawesi Utara</td>
+<td>Minahasa</td>
+<td align="right">1.038375</td>
+<td align="right">124.93335</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat terjadi gempa disertai tsunami </td>
+<td>Historical</td>
+<td>17 November 1857</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1</td>
+<td>125</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; Latief dkk., 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">279</td>
+<td>Sulawesi Utara</td>
+<td>Sangihe</td>
+<td align="right">3.464928</td>
+<td align="right">125.497914</td>
+<td>Deposit tidak diketahui</td>
+<td>erupsi bawah laut Gunung Banua Wuhu menjadi sebab tsunami</td>
+<td>Historical</td>
+<td>18 Juli 1918</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>0.08</td>
+<td> </td>
+<td> </td>
+<td>Vulkanik</td>
+<td>3.138</td>
+<td>125.491</td>
+<td>28,29</td>
+<td>Mutaqin et al., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">280</td>
+<td>Sumatra Barat</td>
+<td>Kepulauan Mentawai</td>
+<td align="right">-2.6925</td>
+<td align="right">100.010844</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dengan cangkang, rip-up clast</td>
+<td>Historical</td>
+<td>25 Oktober 2010</td>
+<td>Excellent</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>Stratigrafi</td>
+<td>1-16.9 m</td>
+<td>450m</td>
+<td>1.5 - 12 cm</td>
+<td>Gempa Bumi</td>
+<td>-3.487</td>
+<td>100.082</td>
+<td>1,2,3,4,5,6,10,18,22,25,28,29</td>
+<td>Yudhicara dkk., 2010;  Yudhicara dkk., 2012; Putra et al., 2012; Putra, 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">281</td>
+<td>Sumatra Barat</td>
+<td>Air Manis, Padang</td>
+<td align="right">-0.824572</td>
+<td align="right">100.361514</td>
+<td>Deposit tidak diketahui</td>
+<td>gempa disertai tsunami yang merusak dan menghanyutkan rumah di pesisir pantai</td>
+<td>Historical</td>
+<td>10 Februari 1797</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi/Sejarah</td>
+<td>U-Th Dating</td>
+<td>5</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1</td>
+<td>100</td>
+<td>6,28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Harris &amp; Major, 2016; Natawidjaja et al., 2006; NOAA</td>
+<td>kejadian tsunami di perkuat dengan penelitian gempa purba yang diukur dengan mikroatol</td>
+</tr>
+<tr>
+<td align="right">282</td>
+<td>Sumatra Barat</td>
+<td>Aia Bangih</td>
+<td align="right">0.225867</td>
+<td align="right">99.360275</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa tremor kemudian setelah gempa terjadi gelombang tsunami yang menerjang</td>
+<td>Historical</td>
+<td>17 Juni 1861</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1</td>
+<td>97.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">283</td>
+<td>Sumatra Barat</td>
+<td>Aia Bangih</td>
+<td align="right">0.212261</td>
+<td align="right">99.371247</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat terjadi gempa disertai tsunami </td>
+<td>Historical</td>
+<td>29 Juli 1885</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>0.2</td>
+<td>99.383</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">284</td>
+<td>Sumatra Barat</td>
+<td>Sikakap</td>
+<td align="right">-2.76445</td>
+<td align="right">100.217644</td>
+<td>Deposit tidak diketahui</td>
+<td>Tercatat terjadi gempa disertai tsunami </td>
+<td>Historical</td>
+<td>6 Februari 1908</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>1.4</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-2</td>
+<td>100?E</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">285</td>
+<td>Sumatra Barat</td>
+<td>Kambang, Kab. Pesisir Selatan</td>
+<td align="right">-1.707975</td>
+<td align="right">100.713664</td>
+<td>Deposit tidak diketahui</td>
+<td>Gempa Kerinci, teramati adanya kenaikan dan gelombang air yang merusak di pesisir Barat Pantai Sumatra</td>
+<td>Historical</td>
+<td>4 Juni 1909</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-2</td>
+<td>101</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">286</td>
+<td>Sumatra Barat</td>
+<td>Siri-siri </td>
+<td align="right">-1.3556</td>
+<td align="right">100.574358</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat terjadi tsunami di Pantai Siri-siri</td>
+<td>Historical</td>
+<td>4 Juli 1904</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>Sumatra Barat</td>
+<td> </td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; Latief et al., 2000; Supartoyo dkk., 2014; BMKG, 2018</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">287</td>
+<td>Sumatra Barat</td>
+<td>Kepulauan Mentawai</td>
+<td align="right">-1.591753</td>
+<td align="right">99.214867</td>
+<td>Deposit tidak diketahui</td>
+<td>teramati adanya gelombang air yang naik pasca gempa</td>
+<td>Historical</td>
+<td>10-Apr-05</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Observasi lapangan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>0.4</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1.644</td>
+<td>99.607</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">288</td>
+<td>Sumatra Barat</td>
+<td>Padang</td>
+<td align="right">-0.948556</td>
+<td align="right">100.351683</td>
+<td>Deposit tidak diketahui</td>
+<td>teramati adanya gelombang air yang naik pasca gempa</td>
+<td>Historical</td>
+<td>16 Agustus 2009</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Observasi lapangan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>0.18</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1.524</td>
+<td>99.378</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">289</td>
+<td>Sumatra Barat</td>
+<td>Padang</td>
+<td align="right">-0.926658</td>
+<td align="right">100.349828</td>
+<td>Deposit tidak diketahui</td>
+<td>teramati adanya gelombang tsunami namun kecil dan tidak merusak</td>
+<td>Historical</td>
+<td>30-Sep-09</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Observasi lapangan</td>
+<td>Data geologi/Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>0.27</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-0.778</td>
+<td>99.719</td>
+<td>28,29</td>
+<td>Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">290</td>
+<td>Sumatra Barat</td>
+<td>Pesisir Selatan Pantai Pariaman</td>
+<td align="right">-0.670481</td>
+<td align="right">100.154036</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dengan rip-up clast hasil bor tangan di swale pantai</td>
+<td>Prehistorical</td>
+<td>Tidak diketahui</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data geologi</td>
+<td>tidak dilakukan penentuan umur</td>
+<td> </td>
+<td> </td>
+<td>10-20cm</td>
+<td>Gempa Bumi?</td>
+<td> </td>
+<td> </td>
+<td>1,2,3,6,8,26</td>
+<td>Azzaman dkk., 2017</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">291</td>
+<td>Sumatra Utara</td>
+<td>Medan</td>
+<td align="right">4.4</td>
+<td align="right">97.7</td>
+<td>Deposit tidak diketahui</td>
+<td>teramati adanya kenaikan air laut setelah terjadinya gempa, diduga tsunami lokal</td>
+<td>Historical</td>
+<td>24 Februari 1982</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Observasi lapangan</td>
+<td>Data geologi,sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td> </td>
+<td> </td>
+<td>28,29</td>
+<td>Soloviev et al., 1992; NOAA</td>
+<td>Tsunami lokal, informasi terkait minim </td>
+</tr>
+<tr>
+<td align="right">292</td>
+<td>Sumatra Utara</td>
+<td>Nias Utara</td>
+<td align="right">1.471817</td>
+<td align="right">97.334589</td>
+<td>Deposit ditemukan</td>
+<td>gempa besar di Sumatra, terjadi tsunami sepanjang pantai Barat Sumatra</td>
+<td>Historical</td>
+<td>03 Desember 1904</td>
+<td>Fair</td>
+<td>Primer</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Data geologi/Sejarah</td>
+<td>U-Th Dating</td>
+<td>15 m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-2</td>
+<td>101</td>
+<td>28,29,30</td>
+<td>Soloviev &amp; Go, 1974; Iida et al, 1967; Harris &amp; Major, 2016; Meltzner et al., 2005; NOAA</td>
+<td>kejadian diperkuat dengan mikroatol di Nias dan Simeulue umur 1799</td>
+</tr>
+<tr>
+<td align="right">293</td>
+<td>Sumatra Utara</td>
+<td>Pulau Batu, Nias Selatan</td>
+<td align="right">-0.068997</td>
+<td align="right">98.287158</td>
+<td>Deposit tidak diketahui</td>
+<td>teramati adanya gelombang air yang naik pasca gempa</td>
+<td>Historical</td>
+<td>28 Desember 1935</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>0.001</td>
+<td>98.25</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">294</td>
+<td>Sumatra Utara</td>
+<td>Gunung Sitoloi, Pulau Nias</td>
+<td align="right">1.294975</td>
+<td align="right">97.609628</td>
+<td>Deposit tidak diketahui</td>
+<td>gelombang tsunami merusak pemukiman di Gunung Sitoli </td>
+<td>Historical</td>
+<td>5 Januari 1843</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td>50m</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1.05</td>
+<td>97.33</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Harris &amp; Major, 2016;NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">295</td>
+<td>Sumatra Utara</td>
+<td>Barus, Tapanuli Tengah</td>
+<td align="right">2.008408</td>
+<td align="right">98.401119</td>
+<td>Deposit tidak diketahui</td>
+<td>gelombang menyebabkan kapal berpindah sampai 600 m ke pesisir</td>
+<td>Historical</td>
+<td>5 Januari 1843</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td>600m</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>2</td>
+<td>18.23</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; Harris &amp; Major, 2016</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">296</td>
+<td>Sumatra Utara</td>
+<td>Sibolga</td>
+<td align="right">1.734456</td>
+<td align="right">98.781228</td>
+<td>Deposit tidak diketahui</td>
+<td>teramati adanya gelombang air yang naik pasca gempa</td>
+<td>Historical</td>
+<td>11 November 1852</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>1.7</td>
+<td>98.8</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">297</td>
+<td>Sumatra Utara</td>
+<td>Barus, Tapanuli Tengah</td>
+<td align="right">2.008408</td>
+<td align="right">98.401119</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa besar di sumatra, teramati adanya tsunami 1 meter</td>
+<td>Historical</td>
+<td>16 Februari 1861</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan sejarah</td>
+<td>1m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1</td>
+<td>97.5</td>
+<td>28,2,9,30</td>
+<td>Soloviev &amp; Go, 1974; NOAA</td>
+<td>Gempa yang besar terjadi di Sumatra, tsunami berdampak pada sepanjang pantai barat sumatra</td>
+</tr>
+<tr>
+<td align="right">298</td>
+<td>Sumatra Utara</td>
+<td>Lagundri, Pulau Nias</td>
+<td align="right">0.581733</td>
+<td align="right">97.737342</td>
+<td>Deposit ditemukan</td>
+<td>Endapan pasir dan bongkah coral yang ditemukan dibawah deposit tahun 2005 dikorelasikan dengan tsunami 1861</td>
+<td>Historical</td>
+<td>16 Februari 1861</td>
+<td>Moderate</td>
+<td>Primer</td>
+<td>Bukti Sedimen/endapan</td>
+<td>Data Geologi/Sejarah</td>
+<td>Catatan Sejarah</td>
+<td>7m</td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1</td>
+<td>97.5</td>
+<td>15,22,25,28,30</td>
+<td>Soloviev &amp; Go, 1974; Fujino et.al, 2014; Harris &amp; Major, 2016; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">299</td>
+<td>Sumatra Utara</td>
+<td>Pulau Simuk</td>
+<td align="right">-0.062228</td>
+<td align="right">97.885108</td>
+<td>Deposit tidak diketahui</td>
+<td>tsunami menghancurkan rumah dan menghanyutkan warga pulau</td>
+<td>Historical</td>
+<td>9 Maret 1861</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td>300m</td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>0</td>
+<td>98</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">300</td>
+<td>Sumatra Utara</td>
+<td>Indrapura</td>
+<td align="right">3.381875</td>
+<td align="right">99.427808</td>
+<td>Deposit tidak diketahui</td>
+<td>tercatat tsunami menerjang Indrapura dan berdampak kerusakan di Pesisir</td>
+<td>Historical</td>
+<td>25 September 1861</td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>-1.5</td>
+<td>100</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td> </td>
+</tr>
+<tr>
+<td align="right">301</td>
+<td>Sumatra Utara</td>
+<td>Pesisir timur, Deli Serdang</td>
+<td align="right">3.82365</td>
+<td align="right">98.7</td>
+<td>Deposit tidak diketahui</td>
+<td>terjadi gempa Sumatra dan pesisir barat Sumatra teramati adanya tsunami</td>
+<td>Historical</td>
+<td>17 Mei 1892 </td>
+<td>Fair</td>
+<td>Sekunder</td>
+<td>Antropologi/tercatat dalam katalog tsunami</td>
+<td>Sejarah</td>
+<td>Catatan Sejarah</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>Gempa Bumi</td>
+<td>2.5</td>
+<td>99.5</td>
+<td>28,29</td>
+<td>Soloviev &amp; Go, 1974; Triyono dkk., 2019; NOAA</td>
+<td>Tercatat  di sepanjang Sumatra juga ada gelombang</td>
+</tr>
+</tbody></table>
+      </div>
+
+      <div class="col-md-3" id="disclaimer">
+        <h5 align="center">DASBOR PANGKALAN DATA PALEOTSUNAMI INDONESIA </h5>
+        <p align="center">Platform WebGIS yang menyajikan data kejadian tsunami dan paleotsunami di Indonesia. Dashboard ini menyajikan Data Statistik Kejadian Tsunami di Indonesia. Diharapkan dapat bermanfaat untuk tujuan riset tsunami atau paleotsunami di Indonesia serta meningkatkan kesadaran masyarakat akan bencana tsunami. <br><br><b> #SiapUntukSelamat</b></p> 
+      </div>
+  </div>
+</section>
+
+<!--Bagian bawah-->
+<section>
+  <div class="row">
+      <div class="col-md-4" id="valid">
+      <h5 align="center">Validitas Data Kejadian Tsunami</h5>
+        <div id="chartvaliditas">
+          <canvas id="validitas"></canvas>
+        </div>
+      </div>
+
+
+    <div class="col" id="totaldata">
+          <h4 align="center">Total Data Tsunami</h4>
+          <h3 align="center" style="font-size: 100px; color: #001D3D;">301</h3>
+    </div>
+
+    <div class="col" id="waktu">
+    <h5 align="center">Waktu Kejadian</h5>
+        <div style="width: 200px;">
+          <canvas id="waktukejadian"></canvas>
+        </div>
+    </div>
+
+    <div class="col" id="bukti">
+      <h5 align="center">Bukti Alam</h5>
+        <div style="width: 200px;">
+          <canvas id="buktialam"></canvas>
+        </div>
+    </div>
+
+    <div class="col" id="deposittsunami">
+        <h5 align="center">Deposit Tsunami</h5>
+        <div style="width: 200px;">
+          <canvas id="deposit"></canvas>
+        </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+
+<footer class="bg-dark text-white">
+  <div class="container">
+    <div class="row text-center pt-3">
+      <div class="col">
+        <p>&copy; 2021 Ihda Ibtihaj. Indonesia Paleotsunami Database. All Rights Reserved. </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.dashboard.js"></script>
+</body>
+</html>

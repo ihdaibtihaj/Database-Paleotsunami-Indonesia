@@ -1,0 +1,46 @@
+/*Legend specific*/
+.legend {
+  padding: 6px 8px;
+  font: 14px Arial, Helvetica, sans-serif;
+  background: white;
+  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
+  border-radius: 3px;
+  line-height: 24px;
+  color: #555;
+}
+.legend h4 {
+  text-align: center;
+  font-size: 16px;
+  margin: 2px 12px 8px;
+  color: black;
+  font-weight: bold;
+}
+
+.legend h5 {
+  text-align: left;
+  font-size: 14px;
+  margin: 2px 12px 8px;
+  color: black;
+  font-weight: bold;
+}
+
+.legend span {
+  position: relative;
+  bottom: 3px;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin: 0 8px 0 0;
+  
+}
+
+.legend i.icon {
+  background-size: 18px;
+}
+
+.legend i.icon2 {
+  background-size: 20px;
+}

@@ -1,0 +1,46 @@
+body {
+  margin: 0px;
+}
+
+#map {
+  width: 100%;
+  height: 100vh;
+}
+
+table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #eee;
+}
+
+th,
+td {
+  text-align: left;
+  font-size: 11px;
+}
+
+td {
+  padding-left: 10px;
+}
+
+th {
+  white-space: nowrap;
+  padding: 5px 10px;
+}
+
+table tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+.leaflet-popup-content-wrapper {
+  width: 301px;
+  overflow-x: scroll;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  border-radius: 0px;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  display: none;
+}
